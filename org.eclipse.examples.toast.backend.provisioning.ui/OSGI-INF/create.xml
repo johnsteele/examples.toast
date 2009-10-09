@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.portal.createAction">
+  <implementation class="org.eclipse.examples.toast.internal.backend.provisioning.ui.CreateAction"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.backend.portal.spi.IPortalAction"/>
+  </service>
+  <property name="action" value="create"/>
+  <reference bind="setControlCenter" interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter" name="controlCenter" unbind="clearControlCenter"/>
+  <property name="label" type="String" value="Create Vehicle"/>
+</scr:component>

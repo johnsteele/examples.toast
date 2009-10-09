@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.portal.uninstlalAction">
+  <implementation class="org.eclipse.examples.toast.internal.backend.provisioning.ui.UninstallAction"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.backend.portal.spi.IPortalAction"/>
+  </service>
+  <property name="action" value="uninstall"/>
+  <reference bind="setProvisioner" interface="org.eclipse.examples.toast.backend.provisioning.IProvisioner" name="provisioner" unbind="clearProvisioner"/>
+  <reference bind="setTickler" cardinality="1..1" interface="org.eclipse.examples.toast.core.tickle.ITickleSender" name="tickler" policy="static" unbind="clearTickler"/>
+</scr:component>

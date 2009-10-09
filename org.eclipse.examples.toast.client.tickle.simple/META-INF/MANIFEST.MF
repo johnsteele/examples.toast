@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Client Simple Tickle Implementation
+Bundle-SymbolicName: org.eclipse.examples.toast.client.tickle.simple
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: javax.servlet;version="2.4.0",
+ javax.servlet.http;version="2.4.0",
+ org.eclipse.examples.toast.core;version="1.0.0",
+ org.eclipse.examples.toast.core.tickle,
+ org.osgi.service.http;version="1.2.0"
+Service-Component: OSGI-INF/component.xml
+Export-Package: org.eclipse.examples.toast.internal.client.tickle.simple;x-internal:=true,
+ org.eclipse.examples.toast.internal.client.tickle.simple.bundle;x-internal:=true

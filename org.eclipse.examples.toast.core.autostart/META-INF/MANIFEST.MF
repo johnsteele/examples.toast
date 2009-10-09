@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Autostart Bundle
+Bundle-SymbolicName: org.eclipse.examples.toast.core.autostart
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: org.osgi.framework;version="1.4.0",
+ org.osgi.util.tracker;version="1.4.2"
+Bundle-Activator: org.eclipse.examples.toast.core.internal.autostart.Autostarter

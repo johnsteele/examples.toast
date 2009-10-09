@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Back End Provisioning Support
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.provisioning
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Service-Component: OSGI-INF/component.xml
+Import-Package: org.eclipse.core.runtime;common=split;version="3.4.0",
+ org.eclipse.equinox.internal.provisional.p2.artifact.repository,
+ org.eclipse.equinox.internal.provisional.p2.core,
+ org.eclipse.equinox.internal.provisional.p2.director,
+ org.eclipse.equinox.internal.provisional.p2.engine,
+ org.eclipse.equinox.internal.provisional.p2.metadata,
+ org.eclipse.equinox.internal.provisional.p2.metadata.query,
+ org.eclipse.equinox.internal.provisional.p2.metadata.repository,
+ org.eclipse.equinox.internal.provisional.p2.query,
+ org.eclipse.examples.toast.backend.provisioning;version="1.0.0",
+ org.eclipse.examples.toast.core;version="1.0.0"
+Export-Package: org.eclipse.examples.toast.backend.provisioning;version="1.0.0"
+

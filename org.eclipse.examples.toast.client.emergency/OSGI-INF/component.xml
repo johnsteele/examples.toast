@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.client.emergency" activate="startup" deactivate="shutdown">
+  <implementation class="org.eclipse.examples.toast.internal.client.emergency.EmergencyMonitor"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.client.emergency.IEmergencyMonitor"/>
+  </service>
+  <reference bind="setGps" interface="org.eclipse.examples.toast.dev.gps.IGps" name="gps"/>
+  <reference bind="setAirbag" interface="org.eclipse.examples.toast.dev.airbag.IAirbag" name="airbag"/>
+  <reference bind="setChannel" interface="org.eclipse.examples.toast.core.channel.sender.IChannel" name="channel"/>
+</scr:component>

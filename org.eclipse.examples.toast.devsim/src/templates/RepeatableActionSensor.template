@@ -1,0 +1,8 @@
+<div class="box tall %%%evenOdd%%%"><p>%%%sensorLabel%%%</p>
+<ul class="controls" style="width: 72px">
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=execute');return false;" class="execute" name="%%%sensorName%%%-execute"></a></li>
+<li>|</li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=run');return false;" class="run" name="%%%sensorName%%%-run"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=stop');return false;" class="stop" name="%%%sensorName%%%-stop"></a></li>
+</ul>
+</div>

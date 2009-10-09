@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width = 240" />
+<link rel="shortcut icon" href="./devices/resources/images/main/favicon.ico" />
+<link rel="icon" href="./devices/resources/images/main/favicon.ico" />
+<link rel="apple-touch-icon" href="./devices/resources/images/main/apple-webclip.png" />
+<link rel="stylesheet" media="screen" type="text/css" href="./devices/resources/stylesheets/common.css" />
+<script src="./devices/resources/javascript/jquery-1.2.5.min.js" type="text/javascript"></script>
+<script src="./devices/resources/javascript/jquery.corner.js" type="text/javascript"></script>
+<script src="./devices/resources/javascript/application.js" type="text/javascript"></script>
+<title>Device Simulator for %%%id%%%</title>
+</head>
+<body onload="$('#page').corner();">
+<div id="page">
+<div id="header">
+<h1>Devices</h1></div>
+<div id="content">

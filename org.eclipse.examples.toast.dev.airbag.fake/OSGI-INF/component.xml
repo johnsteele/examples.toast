@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="startup" modified="shutdown" name="org.eclipse.examples.toast.dev.airbag.fake">
+  <implementation class="org.eclipse.examples.toast.internal.dev.airbag.fake.FakeAirbag"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.dev.airbag.IAirbag"/>
+  </service>
+</scr:component>

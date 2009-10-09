@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Toast Back End WAR" uid="org.eclipse.examples.toast.backend.war" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="false">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-console -consolelog</programArgs>
+      <vmArgs>-Declipse.ignoreApp=true
+-Dosgi.noShutdown=true
+-Dtoast.core.util.logLevel=DEBUG
+-Dorg.osgi.service.http.port=8080
+-Dequinox.ds.print=true
+-Dtoast.repos=file:///c:/temp/ch14/repository
+-Dtoast.profile.location=c:/temp/ch14/clients</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="foo">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.examples.toast.backend.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.backend.p2.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.server.embedded.feature" version="1.0.0.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.equinox.http.servlet" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.examples.toast.core.autostart" autoStart="true" startLevel="0" />
+   </configurations>
+
+</product>

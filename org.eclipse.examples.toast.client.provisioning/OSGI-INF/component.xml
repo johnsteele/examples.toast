@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" name="org.eclipse.examples.toast.client.provisioning">
+  <implementation class="org.eclipse.examples.toast.internal.client.provisioning.FeatureSync"/>
+  <reference bind="setConfigurator" interface="org.eclipse.equinox.internal.provisional.configurator.Configurator" name="configurator" unbind="clearConfigurator"/>
+  <reference bind="setTicklee" interface="org.eclipse.examples.toast.core.tickle.ITickleReceiver" name="ticklee" unbind="clearTicklee"/>
+</scr:component>

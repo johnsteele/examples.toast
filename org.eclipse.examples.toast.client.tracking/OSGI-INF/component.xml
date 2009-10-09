@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" name="org.eclipse.examples.toast.client.tracking">
+  <implementation class="org.eclipse.examples.toast.internal.client.tracking.TrackingMonitor"/>
+  <reference bind="setGps" interface="org.eclipse.examples.toast.dev.gps.IGps" name="gps"/>
+  <reference bind="setChannel" interface="org.eclipse.examples.toast.core.channel.sender.IChannel" name="channel"/>
+  <property name="delay" value="10" type="Integer"/> 
+</scr:component>

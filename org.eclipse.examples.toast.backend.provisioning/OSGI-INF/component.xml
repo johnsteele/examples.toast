@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.provisioner" immediate="true" activate="startup" deactivate="shutdown">
+  <implementation class="org.eclipse.examples.toast.internal.backend.provisioning.Provisioner"/>
+  <reference bind="setProfileRegistry" interface="org.eclipse.equinox.internal.provisional.p2.engine.IProfileRegistry" name="profileRegistry"/>
+  <reference bind="setPlanner" interface="org.eclipse.equinox.internal.provisional.p2.director.IPlanner" name="planner"/>
+  <reference bind="setEngine" interface="org.eclipse.equinox.internal.provisional.p2.engine.IEngine" name="engine"/>
+  <reference bind="setMetadataManager" interface="org.eclipse.equinox.internal.provisional.p2.metadata.repository.IMetadataRepositoryManager" name="metadataManager"/>
+  <reference bind="setArtifactManager" interface="org.eclipse.equinox.internal.provisional.p2.artifact.repository.IArtifactRepositoryManager" name="artifactManager"/>
+  <service>
+     <provide interface="org.eclipse.examples.toast.backend.provisioning.IProvisioner"/>
+  </service>
+</scr:component>

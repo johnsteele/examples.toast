@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="CrustApplication"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="org.eclipse.examples.toast.crust.internal.display.CrustDisplay">
+         </run>
+      </application>
+   </extension>
+
+   <extension
+         id="ToastProduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.examples.toast.crust.display.CrustApplication"
+            name="Toast Client">
+         <property
+               name="appName"
+               value="Toast Client">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.tickle.discovery">
+  <implementation class="org.eclipse.examples.toast.internal.backend.tickle.bundle.Component"/>
+  <reference bind="bind" cardinality="1..1" interface="org.osgi.service.http.HttpService" name="http" policy="static" unbind="unbind"/>
+  <service>
+     <provide interface="org.eclipse.examples.toast.core.discovery.IDiscovery"/>
+  </service>
+</scr:component>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Core Channel Sender
+Bundle-SymbolicName: org.eclipse.examples.toast.core.channel.sender
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: org.eclipse.examples.toast.core;version="[1.0.0,2.0.0)"
+Export-Package: org.eclipse.examples.toast.core.channel.sender;version="1.0.0",
+ org.eclipse.examples.toast.internal.core.channel.sender;version="1.0.0";x-internal:=true
+Service-Component: OSGI-INF/component.xml

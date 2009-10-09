@@ -1,0 +1,43 @@
+<div class="box %%%evenOdd%%%" style="height: 11.2em;">
+<p>Latitude: <span class="data"><span id="latitude">%%%latitudeValue%%%</span></span></p>
+<p>Longitude: <span class="data"><span id="longitude">%%%longitudeValue%%%</span></span></p>
+<p>Heading: <span class="data"><span id="heading">%%%headingValue%%%</span></span></p>
+<ul class="controls" style="width: 120px">
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bnw');return false;" class="execute" name="%%%sensorName%%%-bnw"></a></li>
+<li><div style="width: 18px; height: 18px;"></div></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bn');return false;" class="execute" name="%%%sensorName%%%-bn">N</a></li>
+<li><div style="width: 18px; height: 18px;"></div></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bne');return false;" class="execute" name="%%%sensorName%%%-bne"></a></li>
+</ul>
+<br class="clear"/>
+<ul class="controls" style="width: 120px">
+<li><div style="width: 18px; height: 18px;"></div></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=nw');return false;" class="execute" name="%%%sensorName%%%-nw"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=n');return false;" class="execute" name="%%%sensorName%%%-n"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=ne');return false;" class="execute" name="%%%sensorName%%%-ne"></a></li>
+<li><div style="width: 18px; height: 18px;"></div></li>
+</ul>
+<br class="clear"/>
+<ul class="controls" style="width: 120px">
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bw');return false;" class="execute" name="%%%sensorName%%%-bw">W</a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=w');return false;" class="execute" name="%%%sensorName%%%-w"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=def');return false;" class="default" name="%%%sensorName%%%-def"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=e');return false;" class="execute" name="%%%sensorName%%%-e"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=be');return false;" class="execute" name="%%%sensorName%%%-be">E</a></li>
+</ul>
+<ul class="controls" style="width: 120px">
+<li><div style="width: 18px; height: 18px;"></div></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=sw');return false;" class="execute" name="%%%sensorName%%%-sw"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=s');return false;" class="execute" name="%%%sensorName%%%-s"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=se');return false;" class="execute" name="%%%sensorName%%%-se"></a></li>
+<li><div style="width: 18px; height: 18px;"></div></li>
+</ul>
+<br class="clear"/>
+<ul class="controls" style="width: 120px">
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bsw');return false;" class="execute" name="%%%sensorName%%%-bsw"></a></li>
+<li><div style="width: 18px; height: 18px;"></div></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bs');return false;" class="execute" name="%%%sensorName%%%-bs">S</a></li>
+<li><div style="width: 18px; height: 18px;"></div></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bse');return false;" class="execute" name="%%%sensorName%%%-bse"></a></li>
+</ul>
+</div>

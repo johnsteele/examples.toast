@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.examples.toast.backend.data/src"
+    modelPluginID="org.eclipse.examples.toast.backend.data" modelName="ToastBackEndData"
+    rootExtendsInterface="" suppressEMFTypes="true" richClientPlatform="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" interfaceNamePattern="I{0}" classNamePattern="{0}">
+  <foreignModel>ToastBackendData.ecore</foreignModel>
+  <genPackages prefix="ToastBackEndData" basePackage="org.eclipse.examples.toast.backend"
+      disposableProviderFactory="true" classPackageSuffix="internal" ecorePackage="ToastBackendData.ecore#/">
+    <genDataTypes ecoreDataType="ToastBackendData.ecore#//URI"/>
+    <genClasses image="false" ecoreClass="ToastBackendData.ecore#//Address">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Address/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Address/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Address/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Address/postcode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Address/street"/>
+    </genClasses>
+    <genClasses ecoreClass="ToastBackendData.ecore#//Owner">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Owner/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Owner/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Owner/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Owner/lastName"/>
+    </genClasses>
+    <genClasses ecoreClass="ToastBackendData.ecore#//Package">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Package/waybill"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Package/weight"/>
+    </genClasses>
+    <genClasses ecoreClass="ToastBackendData.ecore#//TrackedLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//TrackedLocation/heading"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//TrackedLocation/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//TrackedLocation/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//TrackedLocation/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//TrackedLocation/time"/>
+    </genClasses>
+    <genClasses ecoreClass="ToastBackendData.ecore#//Vehicle">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference ToastBackendData.ecore#//Vehicle/currentLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Vehicle/emergencyLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Vehicle/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Vehicle/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Vehicle/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Vehicle/trackedLocations"/>
+    </genClasses>
+    <genClasses ecoreClass="ToastBackendData.ecore#//Waybill">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Waybill/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Waybill/item"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Waybill/received"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ToastBackendData.ecore#//Waybill/sent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Waybill/destination"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//Waybill/origin"/>
+    </genClasses>
+    <genClasses ecoreClass="ToastBackendData.ecore#//ControlCenter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//ControlCenter/vehicles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//ControlCenter/waybills"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ToastBackendData.ecore#//ControlCenter/owners"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Client Simple Tickle Support
+Bundle-SymbolicName: org.eclipse.examples.toast.client.discovery.simple
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: org.eclipse.examples.toast.core;version="1.0.0",
+ org.eclipse.examples.toast.core.channel.sender;version="1.0.0",
+ org.eclipse.examples.toast.core.discovery,
+ org.eclipse.examples.toast.core.tickle
+Service-Component: OSGI-INF/component.xml
+Export-Package: org.eclipse.examples.toast.internal.client.discovery.simple;x-internal:=true
+

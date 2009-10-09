@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.tickle.sender">
+  <implementation class="org.eclipse.examples.toast.internal.backend.tickle.simple.SmsOverHttpTickleSender"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.core.tickle.ITickleSender"/>
+  </service>
+  <reference bind="bind" interface="org.eclipse.examples.toast.core.discovery.IDiscovery" name="discovery" unbind="unbind"/>
+</scr:component>

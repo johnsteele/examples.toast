@@ -1,0 +1,5 @@
+SimpleConfig {
+  org.eclipse.equinox.security.auth.module.ExtensionLoginModule required
+  debug="true"
+  extensionId="org.eclipse.examples.toast.backend.security.simpleLogin";
+};

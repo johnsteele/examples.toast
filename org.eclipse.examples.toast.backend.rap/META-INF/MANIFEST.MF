@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rap Backend
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.rap;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.eclipse.examples.toast.backend.rap.Activator
+Bundle-Vendor: EclipseSource
+Require-Bundle: org.eclipse.rap.ui;bundle-version="1.2.0",
+ org.eclipse.core.runtime,
+ org.eclipse.examples.toast.rap.widgets.gmaps;bundle-version="1.1.0",
+ org.eclipse.examples.toast.rap.widgets.drivingsimulator;bundle-version="1.0.0",
+ org.eclipse.examples.toast.backend.controlcenter,
+ org.eclipse.examples.toast.backend.data
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-ActivationPolicy: lazy
+Service-Component: OSGI-INF/component.xml
+Import-Package: org.eclipse.equinox.internal.provisional.p2.metadata,
+ org.eclipse.examples.toast.backend.provisioning;version="1.0.0"

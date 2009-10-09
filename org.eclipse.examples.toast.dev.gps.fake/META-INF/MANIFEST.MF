@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Fake GPS
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-SymbolicName: org.eclipse.examples.toast.dev.gps.fake
+Bundle-Version: 1.0.0
+Export-Package: org.eclipse.examples.toast.internal.dev.gps.fake;version="1.0.0";x-internal:=true
+Service-Component: OSGI-INF/component.xml
+Import-Package: org.eclipse.examples.toast.dev.gps;version="[1.0.0,2.0.0)"

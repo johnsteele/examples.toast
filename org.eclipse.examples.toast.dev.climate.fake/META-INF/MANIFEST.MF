@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Fake Climate Device
+Bundle-SymbolicName: org.eclipse.examples.toast.dev.climate.fake
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: org.eclipse.examples.toast.dev.climate;version="[1.0.0,2.0.0)"
+Service-Component: OSGI-INF/component.xml
+Export-Package: org.eclipse.examples.toast.internal.dev.climate.fake;version="1.0.0";x-internal:=true

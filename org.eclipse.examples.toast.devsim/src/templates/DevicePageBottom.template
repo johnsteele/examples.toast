@@ -1,0 +1,14 @@
+<div class="box black">
+<ul class="nav">
+<li><a href="./devices?device=%%%deviceName%%%">Refresh</a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&action=reset');return false;">Reset</a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&action=run');return false;">Run-all</a></li>
+<li><a href="./devices">Return</a></li>
+</ul>
+</div>
+</div>
+<div id="footer">
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" deactivate="shutdown" name="org.eclipse.examples.toast.dev.cdplayer.fake">
+  <implementation class="org.eclipse.examples.toast.internal.dev.cdplayer.fake.FakeCdPlayer"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.dev.cdplayer.ICdPlayer"/>
+  </service>
+</scr:component>

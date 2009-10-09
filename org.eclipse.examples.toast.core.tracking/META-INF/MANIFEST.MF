@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Core Tracking
+Bundle-SymbolicName: org.eclipse.examples.toast.core.tracking
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Export-Package: org.eclipse.examples.toast.core.tracking;version="1.0.0"
+Import-Package: org.eclipse.examples.toast.core;version="[1.0.0,2.0.0)"

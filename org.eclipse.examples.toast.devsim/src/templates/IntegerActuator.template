@@ -1,0 +1,3 @@
+<div class="box short %%%evenOdd%%%">
+<p>%%%actuatorLabel%%%: <span class="data"><span id="%%%actuatorName%%%">%%%actuatorValue%%%</span> %%%units%%%</span></p>
+</div>

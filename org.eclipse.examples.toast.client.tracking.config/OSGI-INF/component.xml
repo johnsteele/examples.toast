@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" name="org.eclipse.examples.toast.client.tracking.config">
+  <implementation class="org.eclipse.examples.toast.internal.client.tracking.config.bundle.Component"/>
+  <reference bind="setHttp" interface="org.osgi.service.http.HttpService" name="http" unbind="clearHttp"/>
+  <reference bind="setConfigAdmin" interface="org.osgi.service.cm.ConfigurationAdmin" name="configAdmin" unbind="clearConfigAdmin"/>
+</scr:component>

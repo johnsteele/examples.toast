@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.controlcenter" immediate="true">
+  <implementation class="org.eclipse.examples.toast.internal.backend.controlcenter.ControlCenter"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter"/>
+  </service> 
+  <reference bind="bind" interface="org.eclipse.examples.toast.backend.provisioning.IProvisioner" name="provisioner" unbind="unbind"/>
+  <reference bind="bind" interface="org.eclipse.examples.toast.core.discovery.IDiscovery" name="discovery" unbind="unbind"/>
+  <reference bind="setData" cardinality="1..1" interface="org.eclipse.examples.toast.backend.controlcenter.IData" name="data" policy="static"/>
+ </scr:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.swt.emergency" activate="startup" deactivate="shutdown">
+  <implementation class="org.eclipse.examples.toast.internal.swt.emergency.EmergencyScreen"/>
+  <reference bind="setEmergency" interface="org.eclipse.examples.toast.client.emergency.IEmergencyMonitor" name="emergency"/>
+  <reference bind="setShell" interface="org.eclipse.examples.toast.crust.shell.ICrustShell" name="shell"/>
+</scr:component>

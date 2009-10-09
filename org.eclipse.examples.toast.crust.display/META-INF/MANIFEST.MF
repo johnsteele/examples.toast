@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Crust Display
+Bundle-SymbolicName: org.eclipse.examples.toast.crust.display;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Export-Package: org.eclipse.examples.toast.crust.display;version="1.0.0",
+ org.eclipse.examples.toast.crust.internal.display;version="1.0.0";x-internal:=true
+Import-Package: org.eclipse.equinox.app;version="1.0.0",
+ org.eclipse.swt.widgets,
+ org.osgi.framework;version="[1.4.0,2.0.0)"
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.eclipse.examples.toast.crust.internal.display.bundle.Activator

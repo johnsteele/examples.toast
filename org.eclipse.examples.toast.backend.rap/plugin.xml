@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Vehicles"
+            class="org.eclipse.examples.toast.backend.rap.Perspective"
+            id="org.eclipse.examples.toast.backend.rap.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Provisioning"
+            icon="icons/sample2.gif"
+            class="org.eclipse.examples.toast.backend.rap.SoftwareView"
+            id="org.eclipse.examples.toast.backend.rap.softwareView">
+      </view>
+      <view
+            name="Search"
+            id="org.eclipse.examples.toast.backend.rap.searchView"
+            class="org.eclipse.examples.toast.backend.rap.SearchView"
+            icon="icons/sample.gif"
+            restorable="true">
+      </view>
+      <view
+            name="Vehicle"
+            id="org.eclipse.examples.toast.backend.rap.vehicleView"
+            class="org.eclipse.examples.toast.backend.rap.VehicleView"
+            icon="icons/sample.gif"
+            restorable="true">
+      </view>
+      <view
+            class="org.eclipse.examples.toast.backend.rap.MapsView"
+            icon="icons/internal_browser.gif"
+            id="org.eclipse.examples.toast.backend.rap.mapview"
+            name="Map"
+            restorable="true">
+      </view>
+      <view
+            class="org.eclipse.examples.toast.backend.rap.EarthView"
+            icon="icons/internal_browser.gif"
+            id="org.eclipse.examples.toast.backend.rap.earthview"
+            name="Earth"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="org.eclipse.examples.toast.backend.rap.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="org.eclipse.examples.toast.backend.rap.category"
+            id="org.eclipse.examples.toast.backend.rap.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="org.eclipse.examples.toast.backend.rap.category"
+            id="org.eclipse.examples.toast.backend.rap.openMessage">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            class="org.eclipse.examples.toast.backend.rap.EntryPoint"
+            id="org.eclipse.examples.toast.backend.rap.entrypoint1"
+            parameter="toast">
+      </entrypoint>
+   </extension>
+   <extension
+         point="org.eclipse.rap.ui.branding">
+      <branding
+            defaultEntrypointId="org.eclipse.examples.toast.backend.rap.entrypoint1"
+            favicon="icons/sample.gif"
+            id="org.eclipse.examples.toast.backend.rap.toastBranding"
+            servletName="fleet-basic"
+            title="Toast Fleet Manager">
+      </branding>
+   </extension>
+
+</plugin>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Database Loader/Primer
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.data.loader;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.eclipse.equinox.app;version="1.0.0",
+ org.eclipse.examples.toast.backend.controlcenter,
+ org.eclipse.examples.toast.backend.data,
+ org.eclipse.examples.toast.backend.data.internal
+Service-Component: OSGI-INF/component.xml
+Export-Package: org.eclipse.examples.toast.backend.data.loader

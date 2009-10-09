@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component immediate="true" name="org.eclipse.examples.toast.backend.portal" xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+  <implementation class="org.eclipse.examples.toast.internal.backend.portal.bundle.Portal"/>
+  <reference bind="setHttp" interface="org.osgi.service.http.HttpService" name="http" unbind="clearHttp"/>
+  <reference bind="setControlCenter" interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter" name="controlCenter" unbind="clearControlCenter"/>
+  <reference
+    name="action"
+    interface="org.eclipse.examples.toast.backend.portal.spi.IPortalAction"
+    cardinality="0..n"
+    policy="dynamic"
+    bind="addAction"
+    unbind="removeAction"/>
+  <service>
+     <provide interface="org.eclipse.examples.toast.backend.portal.spi.IActionLookup"/>
+  </service>
+</scr:component>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.tracking.ui
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Service-Component: OSGI-INF/tracking.xml,OSGI-INF/trackingMap.xml
+Import-Package: javax.servlet.http;version="2.5.0",
+ org.eclipse.examples.toast.backend.controlcenter,
+ org.eclipse.examples.toast.backend.data,
+ org.eclipse.examples.toast.backend.portal.spi,
+ org.eclipse.examples.toast.core;version="1.0.0"

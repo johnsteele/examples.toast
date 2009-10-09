@@ -1,0 +1,5 @@
+<div class="box short %%%evenOdd%%%">
+<ul class="controls" style="width: 170px;">
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=execute');return false;" class="execute" name="%%%sensorName%%%-execute"></a></li>
+%%%sensorLabel%%%</ul>
+</div>

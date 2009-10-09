@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Toast Client (Full)" uid="org.eclipse.examples.toast.client.full" id="org.eclipse.examples.toast.crust.display.ToastProduct" application="org.eclipse.examples.toast.crust.display.CrustApplication" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-consolelog -console</programArgs>
+      <vmArgs>-Dtoast.core.util.logLevel=DEBUG
+-Dorg.osgi.service.http.port=8081
+-Dequinox.ds.print=true</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="Toast Client">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="javax.servlet"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.cm"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.ds"/>
+      <plugin id="org.eclipse.equinox.http"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.util"/>
+      <plugin id="org.eclipse.examples.toast.client.emergency"/>
+      <plugin id="org.eclipse.examples.toast.client.nav.guidance"/>
+      <plugin id="org.eclipse.examples.toast.client.tracking"/>
+      <plugin id="org.eclipse.examples.toast.client.tracking.config"/>
+      <plugin id="org.eclipse.examples.toast.core"/>
+      <plugin id="org.eclipse.examples.toast.core.autostart"/>
+      <plugin id="org.eclipse.examples.toast.core.channel.sender"/>
+      <plugin id="org.eclipse.examples.toast.core.emergency"/>
+      <plugin id="org.eclipse.examples.toast.core.tracking"/>
+      <plugin id="org.eclipse.examples.toast.crust.artwork.toast" fragment="true"/>
+      <plugin id="org.eclipse.examples.toast.crust.display"/>
+      <plugin id="org.eclipse.examples.toast.crust.igf" fragment=""/>
+      <plugin id="org.eclipse.examples.toast.crust.shell"/>
+      <plugin id="org.eclipse.examples.toast.dev.airbag"/>
+      <plugin id="org.eclipse.examples.toast.dev.airbag.sim"/>
+      <plugin id="org.eclipse.examples.toast.dev.amplifier"/>
+      <plugin id="org.eclipse.examples.toast.dev.amplifier.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.cdplayer"/>
+      <plugin id="org.eclipse.examples.toast.dev.cdplayer.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.climate"/>
+      <plugin id="org.eclipse.examples.toast.dev.climate.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.google"/>
+      <plugin id="org.eclipse.examples.toast.dev.gps"/>
+      <plugin id="org.eclipse.examples.toast.dev.gps.sim"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.am"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.am.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.fm"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.fm.fake"/>
+      <plugin id="org.eclipse.examples.toast.devsim"/>
+      <plugin id="org.eclipse.examples.toast.swt.audio"/>
+      <plugin id="org.eclipse.examples.toast.swt.climate"/>
+      <plugin id="org.eclipse.examples.toast.swt.emergency"/>
+      <plugin id="org.eclipse.examples.toast.swt.nav.guidance.google"/>
+      <plugin id="org.eclipse.examples.toast.swt.nav.mapping.google"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.carbon.macosx" fragment="true"/>
+      <plugin id="org.eclipse.swt.cocoa.macosx" fragment="true"/>
+      <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.swt.wpf.win32.x86" fragment="true"/>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.examples.toast.client.provisioning.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.shell.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.audio.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.climate.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.emergency.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.nav.guidance.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.nav.mapping.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.discovery.simple.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.client.tickle.simple.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.server.solo.simple.feature" version="1.0.0"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.examples.toast.core.autostart" autoStart="true" startLevel="2" />
+   </configurations>
+
+</product>

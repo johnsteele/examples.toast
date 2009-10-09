@@ -1,0 +1,15 @@
+<div class="box tall %%%evenOdd%%%">
+<p>%%%sensorLabel%%%: <span class="data"><span id="%%%sensorName%%%">%%%sensorValue%%%</span> %%%units%%%</span></p>
+<ul class="controls" style="width: 200px">
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=min');return false;" class="min" name="%%%sensorName%%%-min"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=bigdec');return false;" class="largedec" name="%%%sensorName%%%-bigdec"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=dec');return false;" class="smalldec" name="%%%sensorName%%%-dec"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=def');return false;" class="default" name="%%%sensorName%%%-def"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=inc');return false;" class="smallinc" name="%%%sensorName%%%-inc"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=biginc');return false;" class="largeinc" name="%%%sensorName%%%-biginc"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=max');return false;" class="max" name="%%%sensorName%%%-max"></a></li>
+<li>|</li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=run');return false;" class="run" name="%%%sensorName%%%-run"></a></li>
+<li><a href="#" onclick="$.get('./devices?device=%%%deviceName%%%&parameter=%%%sensorName%%%&action=stop');return false;" class="stop" name="%%%sensorName%%%-stop"></a></li>
+</ul>
+</div>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Core Tickle
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-SymbolicName: org.eclipse.examples.toast.core.tickle
+Bundle-Version: 1.0.0
+Export-Package: org.eclipse.examples.toast.core.tickle
+Import-Package: org.eclipse.examples.toast.core;version="1.0.0"

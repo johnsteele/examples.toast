@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Back End Provisioning UI
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.provisioning.ui
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: javax.servlet.http;version="2.4.0",
+ org.eclipse.core.runtime;common=split;version="3.4.0",
+ org.eclipse.equinox.internal.provisional.p2.metadata,
+ org.eclipse.examples.toast.backend.controlcenter,
+ org.eclipse.examples.toast.backend.portal.spi,
+ org.eclipse.examples.toast.backend.provisioning,
+ org.eclipse.examples.toast.core;version="1.0.0",
+ org.eclipse.examples.toast.core.tickle
+Service-Component: OSGI-INF/install.xml,OSGI-INF/uninstall.xml,OSGI-INF/manage.xml,OSGI-INF/create.xml

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="org.eclipse.examples.toast.swt.nav.mapping.google" activate="startup" deactivate="shutdown">
+  <implementation class="org.eclipse.examples.toast.internal.swt.nav.mapping.google.NavigationMappingScreen"/>
+  <reference bind="setShell" interface="org.eclipse.examples.toast.crust.shell.ICrustShell" name="shell"/>
+  <reference bind="setGps" interface="org.eclipse.examples.toast.dev.gps.IGps" name="gps"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.swt.nav.mapping.INavigationMappingScreen"/>
+  </service>
+  <reference bind="setGoogleEarth" cardinality="1..1" interface="org.eclipse.examples.toast.dev.google.IGoogleEarth" name="googleEarth" policy="static"/>
+</scr:component>

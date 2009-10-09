@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Client Climate UI
+Bundle-SymbolicName: org.eclipse.examples.toast.swt.climate
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Import-Package: org.eclipse.examples.toast.core;version="[1.0.0,2.0.0)",
+ org.eclipse.examples.toast.crust.shell;version="[1.0.0,2.0.0)",
+ org.eclipse.examples.toast.crust.widgets;version="1.0.0",
+ org.eclipse.examples.toast.dev.climate;version="[1.0.0,2.0.0)",
+ org.eclipse.swt,
+ org.eclipse.swt.events,
+ org.eclipse.swt.graphics,
+ org.eclipse.swt.widgets
+Service-Component: OSGI-INF/component.xml
+Export-Package: org.eclipse.examples.toast.internal.swt.climate;version="1.0.0";x-internal:=true

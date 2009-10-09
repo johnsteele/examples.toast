@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Core Emergency Support
+Bundle-SymbolicName: org.eclipse.examples.toast.core.emergency
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Export-Package: org.eclipse.examples.toast.core.emergency;version="1.0.0"

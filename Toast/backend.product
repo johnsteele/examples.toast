@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Toast Back End" uid="org.eclipse.examples.toast.backend" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-console -consolelog</programArgs>
+      <vmArgs>-Declipse.ignoreApp=true
+-Dosgi.noShutdown=true
+-Dtoast.core.util.logLevel=DEBUG
+-Dorg.osgi.service.http.port=8080
+-Dequinox.ds.print=true
+-Dtoast.repos=file:///temp/Toast/repository
+-Dtoast.profile.location=/EquinoxOSGi/ToastClients
+-Dtoast.backend.url=http://localhost:8080/toast
+-Declipse.p2.MD5Check=false
+-Dorg.eclipse.rwt.clientLogLevel=OFF 
+-Djava.awt.headless=true 
+-Dfile.encoding=MacRoman
+-Dorg.eclipse.rap.gmaps.key=ABQIAAAAjE6itH-9WA-8yJZ7sZwmpRR4PRdNWf81MAgYRgKhWnNKIZ1yDxSCEmhsk-TDr_xcG2XLLlLsTt_8ew
+-Dorg.eclipse.rap.gearth.key=ABQIAAAA5_6ljM2O3qXTA8HHmBgw9xRhPUWYKt2YxIMVdI2vM0TXq-YGTxTYCP3EbSSf21HueI2M0f6mpoHMGw</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="backend">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.examples.toast.backend.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.backend.p2.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.backend.discovery.simple.feature" version="1.0.0"/>
+      <feature id="org.eclipse.examples.toast.backend.rap.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.examples.toast.server.solo.jetty.feature" version="1.0.0.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.equinox.autostart" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+</product>

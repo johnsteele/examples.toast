@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.dev.climate.fake">
+  <implementation class="org.eclipse.examples.toast.internal.dev.climate.fake.FakeClimateControl"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.dev.climate.IClimateControl"/>
+  </service>
+</scr:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" immediate="true" name="org.eclipse.examples.toast.client.discovery.simple" xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+  <implementation class="org.eclipse.examples.toast.internal.client.discovery.simple.HttpDiscoveryPublisher"/>
+  <reference bind="setChannel" interface="org.eclipse.examples.toast.core.channel.sender.IChannel" name="channel" unbind="clearChannel"/>
+  <reference bind="setTickleReceiver" cardinality="1..1" interface="org.eclipse.examples.toast.core.tickle.ITickleReceiver" name="tickleReceiver" policy="static" unbind="clearTickleReceiver"/>
+</scr:component>
