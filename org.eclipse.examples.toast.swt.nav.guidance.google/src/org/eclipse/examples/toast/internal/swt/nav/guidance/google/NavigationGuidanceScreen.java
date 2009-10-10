@@ -17,6 +17,7 @@ import org.eclipse.examples.toast.crust.shell.DisplayBlock;
 import org.eclipse.examples.toast.crust.shell.ICrustShell;
 import org.eclipse.examples.toast.crust.shell.ScaledWidgetFactory;
 import org.eclipse.examples.toast.crust.widgets.ImageButton;
+import org.eclipse.examples.toast.dev.google.IGoogleEarth;
 import org.eclipse.examples.toast.dev.gps.IGps;
 import org.eclipse.examples.toast.swt.nav.mapping.INavigationMappingScreen;
 import org.eclipse.examples.toast.swt.nav.mapping.INavigationMappingSubscreen;
