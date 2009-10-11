@@ -11,6 +11,8 @@
  *******************************************************************************/
 package org.eclipse.examples.toast.backend.rap;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import org.eclipse.examples.toast.backend.data.IAddress;
 import org.eclipse.examples.toast.backend.data.IDriver;
@@ -164,24 +166,15 @@ public class VehicleView extends ViewPart {
 		});
 	}
 
-	private void setVehicle(final IVehicle vehicle) {
-		this.vehicle = vehicle;
+	private void setVehicle(final IVehicle value) {
+		vehicle = value;
 		System.out.println("vehicle " + vehicle);
 		IDriver driver = vehicle.getDriver();
-		URI imageUrl = driver.getImage();
-		Image image = null;
-		if (imageUrl != null) {
-			String query = imageUrl.getQuery();
-			if (query != null && query.startsWith("PersonID=")) {
-				String id = query.substring(9);
-				image = Graphics.getImage("/image-cache/" + id + ".png", getClass().getClassLoader());
-			}
-		}
-		if (image != null) {
+		Image image = getDriverImage(driver.getImage());
+		if (image != null)
 			photoLabel.setImage(image);
-		} else {
+		else
 			photoLabel.setImage(DEFAULT_IMAGE);
-		}
 		nameLabel.setText(driver.getFirstName() + " " + driver.getLastName());
 		IAddress address = driver.getAddress();
 		addressLabel.setText(address.getCity());
@@ -195,6 +188,25 @@ public class VehicleView extends ViewPart {
 		editProfileButton.setEnabled(vehicle != null);
 		photoLabel.getParent().layout();
 		parent.layout();
+	}
+
+	private Image getDriverImage(URI imageUrl) {
+		if (imageUrl == null)
+			return null;
+		InputStream in = null;
+		// TODO need to update this to cache the images
+		try {
+			try {
+				in = imageUrl.toURL().openStream();
+				return Graphics.getImage(imageUrl.toASCIIString(), in);
+			} finally {
+				if (in != null)
+					in.close();
+			}
+		} catch (IOException e) {
+			// TODO log here
+		}
+		return null;
 	}
 
 	private static String getDirection(final int heading) {
