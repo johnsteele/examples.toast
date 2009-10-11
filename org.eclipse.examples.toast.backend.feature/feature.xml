@@ -59,13 +59,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.equinox.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.equinox.preferences"
          download-size="0"
          install-size="0"
@@ -241,21 +234,28 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.rap.widgets.drivingsimulator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.rap.widgets.gmaps"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.equinox.http.registry"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.examples.toast.rap.widgets.drivingsimulator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.examples.toast.rap.widgets.gmaps"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
