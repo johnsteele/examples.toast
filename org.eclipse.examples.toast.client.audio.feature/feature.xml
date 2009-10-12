@@ -59,35 +59,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.examples.toast.dev.radio.am"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.examples.toast.dev.radio.am.fake"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.examples.toast.dev.radio.fake"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.examples.toast.dev.radio.fm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.examples.toast.dev.radio.fm.fake"
          download-size="0"
          install-size="0"
          version="0.0.0"
