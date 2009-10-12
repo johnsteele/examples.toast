@@ -97,19 +97,12 @@ public class Portal implements IActionLookup {
 		center = value;
 	}
 
-	protected void clearControlCenter(IControlCenter value) {
-		center = null;
-	}
-
 	protected void setHttp(HttpService value) {
 		http = value;
 	}
 
-	protected void clearHttp(HttpService value) {
-		http = null;
-	}
-
-	protected void activate() {
+	protected void activate(BundleContext context) {
+		this.context = context;
 		HttpServlet servlet = new PortalServlet(center, this);
 		String servletRoot = PropertyManager.getProperty(ICoreConstants.BACK_END_URL_PROPERTY, ICoreConstants.BACK_END_URL_DEFAULT);
 		UrlBuilder urlBuilder = new UrlBuilder(servletRoot);
