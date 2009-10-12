@@ -22,8 +22,7 @@ import org.eclipse.examples.toast.crust.widgets.ImageSlider;
 import org.eclipse.examples.toast.dev.amplifier.IAmplifier;
 import org.eclipse.examples.toast.dev.amplifier.IAmplifierListener;
 import org.eclipse.examples.toast.dev.cdplayer.ICdPlayer;
-import org.eclipse.examples.toast.dev.radio.am.IAmRadio;
-import org.eclipse.examples.toast.dev.radio.fm.IFmRadio;
+import org.eclipse.examples.toast.dev.radio.IRadio;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.events.SelectionEvent;
@@ -99,8 +98,7 @@ public class AudioScreen implements IAmplifierListener, SelectionListener, ICrus
 	private ImageButton balanceButton, balanceLeftButton, balanceRightButton;
 	private ImageSlider fadeSlider;
 	private ImageButton fadeButton, fadeFrontButton, fadeBackButton;
-	private IAmRadio am;
-	private IFmRadio fm;
+	private IRadio radio;
 	private ICdPlayer cd;
 
 	public void setShell(ICrustShell value) {
@@ -111,12 +109,8 @@ public class AudioScreen implements IAmplifierListener, SelectionListener, ICrus
 		amplifier = value;
 	}
 
-	public void setFm(IFmRadio value) {
-		fm = value;
-	}
-
-	public void setAm(IAmRadio value) {
-		am = value;
+	public void setRadio(IRadio value) {
+		radio = value;
 	}
 
 	public void setCd(ICdPlayer value) {
@@ -132,7 +126,7 @@ public class AudioScreen implements IAmplifierListener, SelectionListener, ICrus
 		}.sync();
 		amplifier.addListener(this);
 		radioSubscreen = new RadioSubscreen(radioComposite);
-		radioSubscreen.bind(crustShell, fm, am);
+		radioSubscreen.bind(crustShell, radio);
 		cdSubscreen = new CdSubscreen(cdComposite);
 		cdSubscreen.bind(crustShell, cd);
 		updateWidgetsFromModel();

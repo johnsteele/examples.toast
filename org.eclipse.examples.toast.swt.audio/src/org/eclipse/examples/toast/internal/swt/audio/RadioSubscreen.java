@@ -15,8 +15,7 @@ import org.eclipse.examples.toast.crust.shell.DisplayBlock;
 import org.eclipse.examples.toast.crust.shell.ICrustShell;
 import org.eclipse.examples.toast.crust.shell.ScaledWidgetFactory;
 import org.eclipse.examples.toast.crust.widgets.ImageButton;
-import org.eclipse.examples.toast.dev.radio.am.IAmRadio;
-import org.eclipse.examples.toast.dev.radio.fm.IFmRadio;
+import org.eclipse.examples.toast.dev.radio.IRadio;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -26,8 +25,6 @@ import org.eclipse.swt.widgets.Label;
 
 public class RadioSubscreen implements SelectionListener {
 	private static final int PRESET_COUNT = 8;
-	private static final int FM = 0;
-	private static final int AM = 1;
 	private static final String B1_DOWN_IMAGE = "artwork/radio/1Down.png"; //$NON-NLS-1$
 	private static final String B1_UP_IMAGE = "artwork/radio/1Up.png"; //$NON-NLS-1$
 	private static final String B2_DOWN_IMAGE = "artwork/radio/2Down.png"; //$NON-NLS-1$
@@ -58,9 +55,7 @@ public class RadioSubscreen implements SelectionListener {
 	private static final int REFERENCE_WIDTH = 425;
 	private static final int REFERENCE_HEIGHT = 400;
 	private ICrustShell crustShell;
-	private AmRadioController amController;
-	private FmRadioController fmController;
-	private int currentBand;
+	private RadioController controller;
 	private ScaledWidgetFactory f;
 	private Composite screenComposite;
 	private ImageButton seekUpButton, seekDownButton, tuneUpButton, tuneDownButton, bandButton;
@@ -69,16 +64,13 @@ public class RadioSubscreen implements SelectionListener {
 
 	public RadioSubscreen(Composite screenComposite) {
 		this.screenComposite = screenComposite;
-		currentBand = FM;
 		presetButtons = new ImageButton[PRESET_COUNT];
 	}
 
-	public void bind(ICrustShell crustShell, IFmRadio fm, IAmRadio am) {
+	public void bind(ICrustShell crustShell, IRadio radio) {
 		this.crustShell = crustShell;
-		amController = new AmRadioController();
-		amController.bindDevice(am);
-		fmController = new FmRadioController();
-		fmController.bindDevice(fm);
+		controller = new RadioController();
+		controller.bindDevice(radio);
 		new DisplayBlock() {
 			public void run() {
 				populateScreenComposite();
@@ -92,31 +84,26 @@ public class RadioSubscreen implements SelectionListener {
 				unpopulateScreenComposite();
 			}
 		}.sync();
-		if (amController != null) {
-			amController.unbind();
-			amController = null;
-		}
-		if (fmController != null) {
-			fmController.unbind();
-			fmController = null;
+		if (controller != null) {
+			controller.unbind();
+			controller = null;
 		}
 	}
 
-	// SelectionListener implementation
 	public void widgetDefaultSelected(SelectionEvent arg0) {
 	}
 
 	public void widgetSelected(SelectionEvent arg0) {
 		Object href = arg0.getSource();
-		if (tuneDownButton.equals(href)) { //$NON-NLS-1$
+		if (tuneDownButton.equals(href)) {
 			frequencyDown();
-		} else if (tuneUpButton.equals(href)) { //$NON-NLS-1$
+		} else if (tuneUpButton.equals(href)) {
 			frequencyUp();
-		} else if (seekDownButton.equals(href)) { //$NON-NLS-1$
+		} else if (seekDownButton.equals(href)) {
 			seekDown();
-		} else if (seekUpButton.equals(href)) { //$NON-NLS-1$
+		} else if (seekUpButton.equals(href)) {
 			seekUp();
-		} else if (bandButton.equals(href)) { //$NON-NLS-1$
+		} else if (bandButton.equals(href)) {
 			changeBand();
 			//		} else if (href.startsWith("preset:")) { //$NON-NLS-1$
 			// preset(Integer.parseInt(href.substring(7)));
@@ -178,75 +165,38 @@ public class RadioSubscreen implements SelectionListener {
 
 	// screen events
 	private void updateWidgetsFromModel() {
-		amController.bindElements(frequencyLabel, presetButtons);
-		fmController.bindElements(frequencyLabel, presetButtons);
+		controller.bindElements(frequencyLabel, presetButtons);
 		updateCurrentBand();
 	}
 
 	private void updateCurrentBand() {
-		if (currentBand == FM) {
-			if (bandLabel != null) {
-				bandLabel.setText("FM"); //$NON-NLS-1$
-				bandLabel.redraw();
-			}
-			amController.setDisplayed(false);
-			fmController.setDisplayed(true);
-		} else {
-			if (bandLabel != null) {
-				bandLabel.setText("AM"); //$NON-NLS-1$
-				bandLabel.redraw();
-			}
-			fmController.setDisplayed(false);
-			amController.setDisplayed(true);
+		if (bandLabel != null) {
+			bandLabel.setText("FM"); //$NON-NLS-1$
+			bandLabel.redraw();
 		}
+		controller.setDisplayed(true);
 	}
 
 	private void preset(int presetIndex) {
-		if (currentBand == FM) {
-			fmController.tuneToPreset(presetIndex);
-		} else {
-			amController.tuneToPreset(presetIndex);
-		}
+		controller.tuneToPreset(presetIndex);
 	}
 
 	private void frequencyDown() {
-		if (currentBand == FM) {
-			fmController.frequencyDown();
-		} else {
-			amController.frequencyDown();
-		}
+		controller.frequencyDown();
 	}
 
 	private void frequencyUp() {
-		if (currentBand == FM) {
-			fmController.frequencyUp();
-		} else {
-			amController.frequencyUp();
-		}
+		controller.frequencyUp();
 	}
 
 	private void seekDown() {
-		if (currentBand == FM) {
-			fmController.seekDown();
-		} else {
-			amController.seekDown();
-		}
+		controller.seekDown();
 	}
 
 	private void seekUp() {
-		if (currentBand == FM) {
-			fmController.seekUp();
-		} else {
-			amController.seekUp();
-		}
+		controller.seekUp();
 	}
 
 	private void changeBand() {
-		if (currentBand == FM) {
-			currentBand = AM;
-		} else {
-			currentBand = FM;
-		}
-		updateCurrentBand();
 	}
 }

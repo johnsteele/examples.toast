@@ -12,40 +12,41 @@
 package org.eclipse.examples.toast.internal.swt.audio;
 
 import org.eclipse.examples.toast.crust.widgets.ImageButton;
-import org.eclipse.examples.toast.dev.radio.IAbstractRadio;
+import org.eclipse.examples.toast.dev.radio.IRadio;
 import org.eclipse.examples.toast.dev.radio.IRadioListener;
 import org.eclipse.swt.widgets.Label;
 
-public abstract class AbstractRadioController implements IRadioListener {
+public class RadioController implements IRadioListener {
 	private ImageButton[] presetElements;
 	private Label frequencyElement;
-	private IAbstractRadio device;
+	private IRadio device;
 	private boolean displayed;
 
-	protected AbstractRadioController() {
+	protected RadioController() {
 		displayed = false;
 	}
 
-	// Abstract methods
-	protected abstract String convertFrequency(int frequency);
+	private String convertFrequency(int frequency) {
+		int whole = frequency / 10;
+		int fraction = frequency % 10;
+		StringBuffer buffer = new StringBuffer(6);
+		buffer.append(whole);
+		buffer.append('.');
+		buffer.append(fraction);
+		return buffer.toString();
+	}
 
-	// IRadioListener implementation
 	public void frequencyChanged(int frequency) {
 		updateFrequency(frequency);
 	}
 
-	public void presetChanged(int presetIndex, int frequency) {
-		updatePreset(presetIndex, frequency);
-	}
-
-	// API
 	public void bindElements(Label frequencyElement, ImageButton[] presetElements) {
 		this.frequencyElement = frequencyElement;
 		this.presetElements = presetElements;
 		device.addListener(this);
 	}
 
-	public void bindDevice(IAbstractRadio device) {
+	public void bindDevice(IRadio device) {
 		this.device = device;
 	}
 
@@ -79,10 +80,6 @@ public abstract class AbstractRadioController implements IRadioListener {
 
 	public void seekUp() {
 		device.seekUp();
-	}
-
-	public void setPresetToCurrent(int presetIndex) {
-		device.setPreset(presetIndex, device.getFrequency());
 	}
 
 	public void tuneToPreset(int presetIndex) {

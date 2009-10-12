@@ -3,7 +3,6 @@
   <implementation class="org.eclipse.examples.toast.internal.swt.audio.AudioScreen"/>
   <reference bind="setCd" interface="org.eclipse.examples.toast.dev.cdplayer.ICdPlayer" name="cd"/>
   <reference bind="setAmp" interface="org.eclipse.examples.toast.dev.amplifier.IAmplifier" name="amp"/>
-  <reference bind="setAm" interface="org.eclipse.examples.toast.dev.radio.am.IAmRadio" name="am"/>
-  <reference bind="setFm" interface="org.eclipse.examples.toast.dev.radio.fm.IFmRadio" name="fm"/>
+  <reference bind="setRadio" interface="org.eclipse.examples.toast.dev.radio.IRadio" name="radio"/>
   <reference bind="setShell" interface="org.eclipse.examples.toast.crust.shell.ICrustShell" name="shell"/>
 </scr:component>
