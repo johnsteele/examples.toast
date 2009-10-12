@@ -14,30 +14,24 @@ package org.eclipse.examples.toast.dev.radio.fake;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.eclipse.examples.toast.dev.radio.IAbstractRadio;
+import org.eclipse.examples.toast.dev.radio.IRadio;
 import org.eclipse.examples.toast.dev.radio.IRadioListener;
 
-public abstract class AbstractFakeRadio implements IAbstractRadio {
+public class FakeRadio implements IRadio {
+	private static final int DEFAULT_FREQUENCY = 915;
+	private static final int MAX_FREQUENCY = 1059;
+	private static final int MIN_FREQUENCY = 881;
+	private static final int FREQUENCY_INCREMENT = 2;
+	private static final int[] FAKE_SIGNALS = {885, 891, 903, 915, 923, 933, 947, 957, 961, 977, 981, 993, 1001, 1025, 1041, 1057};
+	private static final int[] DEFAULT_PRESETS = {885, 915, 957, 969, 981, 1013, 1041, 1057};
 	private List listeners;
-	private int frequency = getDefaultFrequency();
-	private static final int PRESET_COUNT = 8;
-	private int[] presets = getDefaultPresets();
+	private int frequency = DEFAULT_FREQUENCY;
 
-	protected AbstractFakeRadio() {
+	public FakeRadio() {
 		super();
 		listeners = new ArrayList(1);
 	}
 
-	// Subclass responsibilities
-	protected abstract int getDefaultFrequency();
-
-	protected abstract int[] getDefaultPresets();
-
-	protected abstract int getFrequencyIncrement();
-
-	protected abstract int[] getFakeSignals();
-
-	// IAbstractRadioService implementation
 	public void addListener(IRadioListener listener) {
 		synchronized (listeners) {
 			listeners.add(listener);
@@ -50,21 +44,28 @@ public abstract class AbstractFakeRadio implements IAbstractRadio {
 		}
 	}
 
-	// Frequency
+	public int getMaxFrequency() {
+		return MAX_FREQUENCY;
+	}
+
+	public int getMinFrequency() {
+		return MIN_FREQUENCY;
+	}
+
 	public void frequencyUp() {
-		if (frequency < getMaxFrequency()) {
-			frequency += getFrequencyIncrement();
+		if (frequency < MAX_FREQUENCY) {
+			frequency += FREQUENCY_INCREMENT;
 		} else {
-			frequency = getMinFrequency();
+			frequency = MIN_FREQUENCY;
 		}
 		notifyFrequencyChanged();
 	}
 
 	public void frequencyDown() {
-		if (frequency > getMinFrequency()) {
-			frequency -= getFrequencyIncrement();
+		if (frequency > MIN_FREQUENCY) {
+			frequency -= FREQUENCY_INCREMENT;
 		} else {
-			frequency = getMaxFrequency();
+			frequency = MAX_FREQUENCY;
 		}
 		notifyFrequencyChanged();
 	}
@@ -80,9 +81,8 @@ public abstract class AbstractFakeRadio implements IAbstractRadio {
 		return frequency;
 	}
 
-	// Seek
 	public void seekUp() {
-		int[] fakeSignals = getFakeSignals();
+		int[] fakeSignals = FAKE_SIGNALS;
 		for (int i = 0; i < fakeSignals.length; i++) {
 			if (fakeSignals[i] > frequency) {
 				setFrequency(fakeSignals[i]);
@@ -93,55 +93,35 @@ public abstract class AbstractFakeRadio implements IAbstractRadio {
 	}
 
 	public void seekDown() {
-		int[] fakeSignals = getFakeSignals();
-		for (int i = fakeSignals.length - 1; i >= 0; i--) {
-			if (fakeSignals[i] < frequency) {
-				setFrequency(fakeSignals[i]);
+		for (int i = FAKE_SIGNALS.length - 1; i >= 0; i--) {
+			if (FAKE_SIGNALS[i] < frequency) {
+				setFrequency(FAKE_SIGNALS[i]);
 				return;
 			}
 		}
-		setFrequency(fakeSignals[fakeSignals.length - 1]);
+		setFrequency(FAKE_SIGNALS[FAKE_SIGNALS.length - 1]);
 	}
 
-	// Presets (always 0-based indexed)
 	public int getPresetCount() {
-		return AbstractFakeRadio.PRESET_COUNT;
+		return DEFAULT_PRESETS.length;
 	}
 
 	public int getPreset(int presetIndex) {
-		return presets[presetIndex];
-	}
-
-	public void setPreset(int presetIndex, int frequency) {
-		if (presets[presetIndex] != frequency) {
-			presets[presetIndex] = frequency;
-			notifyPresetChanged(presetIndex);
-		}
+		return DEFAULT_PRESETS[presetIndex];
 	}
 
 	public void tuneToPreset(int presetIndex) {
-		if (presets[presetIndex] != frequency) {
-			setFrequency(presets[presetIndex]);
+		if (DEFAULT_PRESETS[presetIndex] != frequency) {
+			setFrequency(DEFAULT_PRESETS[presetIndex]);
 		}
 	}
 
-	// Private
 	private void notifyFrequencyChanged() {
 		synchronized (listeners) {
 			Iterator iterator = listeners.iterator();
 			while (iterator.hasNext()) {
 				IRadioListener listener = (IRadioListener) iterator.next();
 				listener.frequencyChanged(frequency);
-			}
-		}
-	}
-
-	private void notifyPresetChanged(int presetIndex) {
-		synchronized (listeners) {
-			Iterator iterator = listeners.iterator();
-			while (iterator.hasNext()) {
-				IRadioListener listener = (IRadioListener) iterator.next();
-				listener.presetChanged(presetIndex, presets[presetIndex]);
 			}
 		}
 	}

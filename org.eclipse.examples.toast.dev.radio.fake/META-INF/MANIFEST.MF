@@ -5,6 +5,5 @@ Bundle-SymbolicName: org.eclipse.examples.toast.dev.radio.fake
 Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: J2SE-1.4
 Export-Package: org.eclipse.examples.toast.dev.radio.fake;version="1.0.0"
-Import-Package: org.eclipse.examples.toast.core;version="[1.0.0,2.0.0)",
- org.eclipse.examples.toast.dev.radio;version="[1.0.0,2.0.0)"
-Require-Bundle: org.eclipse.equinox.common;bundle-version="3.5.0"
+Import-Package: org.eclipse.examples.toast.dev.radio;version="[1.0.0,2.0.0)"
+Service-Component: OSGI-INF/component.xml
