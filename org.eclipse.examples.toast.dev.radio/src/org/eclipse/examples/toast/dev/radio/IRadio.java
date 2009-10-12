@@ -11,7 +11,7 @@
  *******************************************************************************/
 package org.eclipse.examples.toast.dev.radio;
 
-public interface IAbstractRadio {
+public interface IRadio {
 	public void addListener(IRadioListener listener);
 
 	public void removeListener(IRadioListener listener);
@@ -38,8 +38,6 @@ public interface IAbstractRadio {
 	public int getPresetCount();
 
 	public int getPreset(int presetIndex);
-
-	public void setPreset(int presetIndex, int frequency);
 
 	public void tuneToPreset(int presetIndex);
 }

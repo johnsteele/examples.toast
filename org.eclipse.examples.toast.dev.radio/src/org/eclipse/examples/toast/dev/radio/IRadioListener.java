@@ -13,6 +13,4 @@ package org.eclipse.examples.toast.dev.radio;
 
 public interface IRadioListener {
 	public void frequencyChanged(int frequency);
-
-	public void presetChanged(int presetIndex, int frequency);
 }
