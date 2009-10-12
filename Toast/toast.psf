@@ -58,11 +58,7 @@
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps.fake,org.eclipse.examples.toast.dev.gps.fake"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps.sim,org.eclipse.examples.toast.dev.gps.sim"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio,org.eclipse.examples.toast.dev.radio"/>
-<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.am,org.eclipse.examples.toast.dev.radio.am"/>
-<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.am.fake,org.eclipse.examples.toast.dev.radio.am.fake"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.fake,org.eclipse.examples.toast.dev.radio.fake"/>
-<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.fm,org.eclipse.examples.toast.dev.radio.fm"/>
-<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.fm.fake,org.eclipse.examples.toast.dev.radio.fm.fake"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.devsim,org.eclipse.examples.toast.devsim"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.rap.widgets.gmaps,org.eclipse.examples.toast.rap.widgets.gmaps"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.server.embedded.feature,org.eclipse.examples.toast.server.embedded.feature"/>

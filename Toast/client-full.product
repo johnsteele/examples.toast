@@ -61,11 +61,11 @@
       <plugin id="org.eclipse.examples.toast.dev.gps"/>
       <plugin id="org.eclipse.examples.toast.dev.gps.sim"/>
       <plugin id="org.eclipse.examples.toast.dev.radio"/>
-      <plugin id="org.eclipse.examples.toast.dev.radio.am"/>
-      <plugin id="org.eclipse.examples.toast.dev.radio.am.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.am" fragment=""/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.am.fake" fragment=""/>
       <plugin id="org.eclipse.examples.toast.dev.radio.fake"/>
-      <plugin id="org.eclipse.examples.toast.dev.radio.fm"/>
-      <plugin id="org.eclipse.examples.toast.dev.radio.fm.fake"/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.fm" fragment=""/>
+      <plugin id="org.eclipse.examples.toast.dev.radio.fm.fake" fragment=""/>
       <plugin id="org.eclipse.examples.toast.devsim"/>
       <plugin id="org.eclipse.examples.toast.swt.audio"/>
       <plugin id="org.eclipse.examples.toast.swt.climate"/>
