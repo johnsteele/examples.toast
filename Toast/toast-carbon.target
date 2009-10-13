@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.5"?>
 
-<target name="Toast Target">
+<target name="Toast Target for Carbon">
 <locations>
 <location includeAllPlatforms="false" includeMode="slicer" type="InstallableUnit">
 <unit id="org.eclipse.ecf.core.feature.group" version="3.0.1.v20090916-2238"/>
@@ -11,6 +11,10 @@
 <unit id="org.eclipse.rap.sdk.feature.group" version="1.2.1.20090813-1453"/>
 <repository location="http://download.eclipse.org/releases/galileo"/>
 </location>
+<location path="${workspace_loc}/Toast/target" type="Directory"/>
 </locations>
+<environment>
+<ws>carbon</ws>
+</environment>
 <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 </target>
