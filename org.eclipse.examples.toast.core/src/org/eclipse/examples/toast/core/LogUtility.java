@@ -1,17 +1,18 @@
 /*******************************************************************************
- * Copyright (c) 2009 Paul VanderLei, Simon Archer, Jeff McAffer and others. All 
- * rights reserved. This program and the accompanying materials are made available 
- * under the terms of the Eclipse Public License v1.0 and Eclipse Distribution License
- * v1.0 which accompanies this distribution. The Eclipse Public License is available at 
- * http://www.eclipse.org/legal/epl-v10.html and the Eclipse Distribution License 
- * is available at http://www.eclipse.org/org/documents/edl-v10.php.
+ * Copyright (c) 2001, 2007 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * Contributors: 
- *     Paul VanderLei, Simon Archer, Jeff McAffer - initial API and implementation
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *     Paul VanderLei, Simon Archer, Jeff McAffer - additional enhancements
  *******************************************************************************/
 package org.eclipse.examples.toast.core;
 
 import org.eclipse.examples.toast.core.spi.IStatusIdFinder;
+import org.eclipse.examples.toast.internal.core.LogProxy;
 import org.osgi.service.log.LogService;
 
 public final class LogUtility extends Object {
