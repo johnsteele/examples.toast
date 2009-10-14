@@ -28,14 +28,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.examples.toast.swt.nav.guidance"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.examples.toast.dev.routing.sim"
+         id="org.eclipse.examples.toast.swt.nav.guidance.google"
          download-size="0"
          install-size="0"
          version="0.0.0"
