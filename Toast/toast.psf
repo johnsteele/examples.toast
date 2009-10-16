@@ -54,12 +54,14 @@
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.cdplayer.fake,org.eclipse.examples.toast.dev.cdplayer.fake"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.climate,org.eclipse.examples.toast.dev.climate"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.climate.fake,org.eclipse.examples.toast.dev.climate.fake"/>
+<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.google,org.eclipse.examples.toast.dev.google"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps,org.eclipse.examples.toast.dev.gps"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps.fake,org.eclipse.examples.toast.dev.gps.fake"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps.sim,org.eclipse.examples.toast.dev.gps.sim"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio,org.eclipse.examples.toast.dev.radio"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.fake,org.eclipse.examples.toast.dev.radio.fake"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.devsim,org.eclipse.examples.toast.devsim"/>
+<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.rap.widgets.drivingsimulator,org.eclipse.examples.toast.rap.widgets.drivingsimulator"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.rap.widgets.gmaps,org.eclipse.examples.toast.rap.widgets.gmaps"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.server.embedded.feature,org.eclipse.examples.toast.server.embedded.feature"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.server.solo.jetty.feature,org.eclipse.examples.toast.server.solo.jetty.feature"/>
