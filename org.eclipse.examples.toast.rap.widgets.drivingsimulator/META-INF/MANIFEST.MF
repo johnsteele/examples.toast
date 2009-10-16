@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Drivingsimulator
+Bundle-SymbolicName: org.eclipse.examples.toast.rap.widgets.drivingsimulator;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: EclipseSource
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Require-Bundle: org.eclipse.rap.ui;bundle-version="1.2.0"
+Export-Package: org.eclipse.examples.toast.rap.drivingsimulator,
+ org.eclipse.examples.toast.rap.drivingsimulator.resource;x-internal:=true,
+ org.eclipse.examples.toast.rap.internal.drivingsimulator.drivingsimulatorkit;x-internal:=true
