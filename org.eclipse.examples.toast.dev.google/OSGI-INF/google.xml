@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component activate="startup" deactivate="shutdown" name="org.eclipse.examples.toast.dev.google" xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+  <implementation class="org.eclipse.examples.toast.internal.dev.google.Simulator"/>
+  <service>
+    <provide interface="org.eclipse.examples.toast.dev.gps.IGps"/>
+    <provide interface="org.eclipse.examples.toast.dev.google.IGoogleEarth"/>
+  </service>
+  <reference bind="setSimulator" cardinality="1..1" interface="org.eclipse.examples.toast.devsim.IDeviceSimulator" name="simulator" policy="static"/>
+  <reference bind="setBrowser" cardinality="1..1" interface="org.eclipse.swt.browser.Browser" name="browser" policy="static"/>
+</scr:component>

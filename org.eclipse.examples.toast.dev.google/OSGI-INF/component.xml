@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" name="org.eclipse.examples.toast.dev.google.browser">
+  <implementation class="org.eclipse.examples.toast.internal.dev.google.bundle.Component"/>
+  <reference bind="setShell" interface="org.eclipse.examples.toast.crust.shell.ICrustShell" name="shell"/>
+  <reference bind="setConverter" cardinality="1..1" interface="org.eclipse.osgi.service.urlconversion.URLConverter" name="converter" policy="static"/>
+</scr:component>
