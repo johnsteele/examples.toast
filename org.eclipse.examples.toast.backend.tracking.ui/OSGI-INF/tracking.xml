@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.portal.trackingAction">
-  <implementation class="org.eclipse.examples.toast.internal.backend.portal.TrackingAction"/>
+  <implementation class="org.eclipse.examples.toast.internal.backend.tracking.ui.TrackingAction"/>
   <service>
     <provide interface="org.eclipse.examples.toast.backend.portal.spi.IPortalAction"/>
   </service>
