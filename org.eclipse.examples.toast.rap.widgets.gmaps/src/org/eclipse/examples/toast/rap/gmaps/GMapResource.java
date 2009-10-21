@@ -29,7 +29,7 @@ public class GMapResource implements IResource {
 	}
 
 	public String getLocation() {
-		return "org/eclipse/rap/gmaps/GMap.js";
+		return "org/eclipse/examples/toast/rap/gmaps/GMap.js";
 	}
 
 	public boolean isJSLibrary() {

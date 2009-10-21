@@ -25,7 +25,7 @@ public class GMapInitResource implements IResource {
 	}
 
 	public String getLocation() {
-		return "org/eclipse/rap/gmaps/GMap.init.js";
+		return "org/eclipse/examples/toast/rap/gmaps/GMap.init.js";
 	}
 
 	public RegisterOptions getOptions() {
