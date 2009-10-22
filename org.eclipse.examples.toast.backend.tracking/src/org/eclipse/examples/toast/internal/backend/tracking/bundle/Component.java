@@ -12,11 +12,11 @@
 package org.eclipse.examples.toast.internal.backend.tracking.bundle;
 
 import javax.servlet.http.HttpServlet;
-import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
 import org.eclipse.examples.toast.core.ICoreConstants;
 import org.eclipse.examples.toast.core.LogUtility;
 import org.eclipse.examples.toast.core.PropertyManager;
 import org.eclipse.examples.toast.core.UrlBuilder;
+import org.eclipse.examples.toast.core.tracking.ITrackingCenter;
 import org.eclipse.examples.toast.core.tracking.ITrackingConstants;
 import org.eclipse.examples.toast.internal.backend.tracking.TrackingServlet;
 import org.osgi.service.http.HttpService;
@@ -24,17 +24,17 @@ import org.osgi.service.http.HttpService;
 public class Component {
 	private String servletAlias;
 	private HttpService http;
-	private IControlCenter center;
+	private ITrackingCenter center;
 
-	public void bind(HttpService value) {
+	public void setHttp(HttpService value) {
 		http = value;
 	}
 
-	public void bind(IControlCenter value) {
+	public void setTrackingCenter(ITrackingCenter value) {
 		center = value;
 	}
 
-	protected void activate() {
+	protected void startup() {
 		try {
 			String servletRoot = PropertyManager.getProperty(ICoreConstants.BACK_END_URL_PROPERTY, ICoreConstants.BACK_END_URL_DEFAULT);
 			UrlBuilder urlBuilder = new UrlBuilder(servletRoot);
@@ -49,15 +49,7 @@ public class Component {
 		}
 	}
 
-	public void unbind(HttpService value) {
-		http = null;
-	}
-
-	public void unbind(IControlCenter value) {
-		center = null;
-	}
-
-	protected void deactivate() {
+	protected void shutdown() {
 		http.unregister(servletAlias);
 	}
 }

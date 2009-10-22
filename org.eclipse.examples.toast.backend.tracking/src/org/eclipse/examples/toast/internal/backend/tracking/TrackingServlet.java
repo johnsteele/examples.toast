@@ -17,14 +17,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
 import org.eclipse.examples.toast.core.ICoreConstants;
+import org.eclipse.examples.toast.core.tracking.ITrackingCenter;
 import org.eclipse.examples.toast.core.tracking.ITrackingConstants;
 
 public class TrackingServlet extends HttpServlet {
-	private IControlCenter center;
+	private ITrackingCenter center;
 
-	public TrackingServlet(IControlCenter center) {
+	public TrackingServlet(ITrackingCenter center) {
 		this.center = center;
 	}
 
@@ -35,7 +35,7 @@ public class TrackingServlet extends HttpServlet {
 		int longitude = Integer.parseInt(getParameter(request, response, ITrackingConstants.LONGITUDE_PARAMETER));
 		int heading = Integer.parseInt(getParameter(request, response, ITrackingConstants.HEADING_PARAMETER));
 		int speed = Integer.parseInt(getParameter(request, response, ITrackingConstants.SPEED_PARAMETER));
-		center.postLocation(id, latitude, longitude, heading, speed);
+		center.postTrackingLocation(id, latitude, longitude, heading, speed);
 
 		PrintWriter writer = response.getWriter();
 		writer.print("OK");

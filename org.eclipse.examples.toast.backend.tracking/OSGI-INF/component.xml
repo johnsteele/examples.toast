@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.examples.toast.backend.tracking">
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" deactivate="startup" modified="shutdown" name="org.eclipse.examples.toast.backend.tracking">
   <implementation class="org.eclipse.examples.toast.internal.backend.tracking.bundle.Component"/>
-  <reference bind="bind" interface="org.osgi.service.http.HttpService" name="http" unbind="unbind"/>
-  <reference bind="bind" interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter" name="controlCenter" unbind="unbind"/>
+  <reference bind="setHttp" interface="org.osgi.service.http.HttpService" name="http"/>
+  <reference bind="setTrackingCenter" interface="org.eclipse.examples.toast.backend.controlcenter.ITrackingCenter" name="trackingCenter"/>
 </scr:component>
