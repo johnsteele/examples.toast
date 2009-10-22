@@ -37,6 +37,5 @@ public class Perspective implements IPerspectiveFactory {
 		IFolderLayout folder = layout.createFolder("belowEditor", IPageLayout.BOTTOM, 0.5f, VehicleView.ID);
 		folder.addView(SoftwareView.ID);
 		folder.addView(MapsView.ID);
-		folder.addView(EarthView.ID);
 	}
 }

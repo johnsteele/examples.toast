@@ -168,7 +168,6 @@ public class VehicleView extends ViewPart {
 
 	private void setVehicle(final IVehicle value) {
 		vehicle = value;
-		System.out.println("vehicle " + vehicle);
 		IDriver driver = vehicle.getDriver();
 		Image image = getDriverImage(driver.getImage());
 		if (image != null)

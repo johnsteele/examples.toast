@@ -8,7 +8,6 @@ Bundle-Vendor: EclipseSource
 Require-Bundle: org.eclipse.rap.ui;bundle-version="1.2.0",
  org.eclipse.core.runtime,
  org.eclipse.examples.toast.rap.widgets.gmaps;bundle-version="1.1.0",
- org.eclipse.examples.toast.rap.widgets.drivingsimulator;bundle-version="1.0.0",
  org.eclipse.examples.toast.backend.controlcenter,
  org.eclipse.examples.toast.backend.data
 Bundle-RequiredExecutionEnvironment: J2SE-1.4

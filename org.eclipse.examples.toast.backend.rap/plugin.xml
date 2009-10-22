@@ -39,13 +39,6 @@
             name="Map"
             restorable="true">
       </view>
-      <view
-            class="org.eclipse.examples.toast.backend.rap.EarthView"
-            icon="icons/internal_browser.gif"
-            id="org.eclipse.examples.toast.backend.rap.earthview"
-            name="Earth"
-            restorable="true">
-      </view>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
