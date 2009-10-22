@@ -46,11 +46,12 @@
       <feature id="org.eclipse.examples.toast.backend.discovery.simple.feature" version="1.0.0"/>
       <feature id="org.eclipse.examples.toast.backend.rap.feature" version="1.0.0.qualifier"/>
       <feature id="org.eclipse.examples.toast.server.solo.jetty.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.examples.toast.backend.data.simple.feature" version="1.0.0.qualifier"/>
    </features>
 
    <configurations>
-      <plugin id="org.eclipse.equinox.autostart" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.examples.toast.core.autostart" autoStart="true" startLevel="2" />
    </configurations>
 
 </product>
