@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Persistence Plug-in
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.data.persistence
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+JPA-PersistenceUnits: toast
+Require-Bundle: org.eclipse.emf.teneo.eclipselink;bundle-version="1.0.0",
+ org.eclipse.examples.toast.backend.data;bundle-version="1.0.0",
+ org.eclipse.examples.toast.backend.controlcenter;bundle-version="1.0.0",
+ org.eclipse.examples.toast.core;bundle-version="1.0.0"
+Export-Package: org.eclipse.examples.toast.backend.data.persistence
+Import-Package: javax.persistence;version="1.99.0",
+ org.apache.derby.jdbc,
+ org.osgi.framework;version="1.5.0"
+Service-Component: OSGI-INF/component.xml

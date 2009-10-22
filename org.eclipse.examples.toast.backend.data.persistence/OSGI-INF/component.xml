@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" name="org.equinoxosgi.toast.backend.data.persistence">
+   <implementation class="org.eclipse.examples.toast.backend.data.persistence.ToastDataManager"/>
+   <service>
+      <provide interface="org.eclipse.examples.toast.backend.controlcenter.IData"/>
+   </service>
+   <property name="eclipselink.jdbc.url" type="String" value="jdbc:derby:toast"/>
+   <property name="eclipselink.jdbc.user" type="String" value="app"/>
+   <property name="eclipselink.jdbc.password" type="String" value="app"/>
+   <property name="eclipselink.jdbc.driver" type="String" value="org.apache.derby.jdbc.ClientDriver"/>
+</scr:component>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	eclipselink-orm.xml can be used either to augment the standard mappings defined
+	using either annotations or orm.xml, or as a complete replacement for orm.xml.
+	In this example, the eclipselink-orm.xml just contains an addition to the standard
+	JPA mappings and adds an EclipseLink Converter to a field of an Entity.
+ -->
+<entity-mappings version="1.0" xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eclipse.org/eclipselink/xsds/persistence/orm http://www.eclipse.org/eclipselink/xsds/eclipselink_orm_1_0.xsd">
+	<!--
+		UriConverter converts between the string form of a URI stored in the database
+		into a java.util.URI, and back.
+	 -->
+	<converter name="uri" class="org.eclipse.examples.toast.backend.data.persistence.UriConverter"/>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.Address">
+		<table name="ADDRESS">
+		</table>
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+		</attributes>
+	</entity>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.Hub">
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+			<one-to-many name="waybills" target-entity="org.eclipse.examples.toast.backend.data.internal.Waybill">
+				<join-table name="HUB_WAYBILL"/>
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-many>
+			<one-to-many name="vehicles" target-entity="org.eclipse.examples.toast.backend.data.internal.Vehicle">
+				<join-table name="HUB_VEHICLE"/>
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-many>
+			<one-to-many name="drivers" target-entity="org.eclipse.examples.toast.backend.data.internal.Driver">
+				<join-table name="HUB_DRIVER"/>
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-many>
+		</attributes>
+	</entity>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.Driver">
+		<table name="DRIVER">
+		</table>
+		<named-query name="Driver.findAll">
+			<query>select d from Driver d</query>
+		</named-query>
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+			<basic name="image">
+				<!-- 
+					We attach a UriConverter to the image field of the Driver so
+					that instead of being serialized (default JPA behavior), the 
+					URI is converted to a string for storage in the database. 
+				 -->
+				<convert>uri</convert>
+			</basic>
+			<one-to-one name="address" target-entity="org.eclipse.examples.toast.backend.data.internal.Address" fetch="LAZY">
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-one>
+		</attributes>
+	</entity>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.Package">
+		<table name="PACKAGE">
+		</table>
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+			<one-to-one name="eContainer" target-entity="org.eclipse.examples.toast.backend.data.internal.Waybill" fetch="LAZY" mapped-by="item">
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-one>
+		</attributes>
+	</entity>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.Vehicle">
+		<table name="VEHICLE">
+		</table>
+		<named-query name="Vehicle.findByWaybillId">
+			<query>select v from Vehicle v join v.packages w where w.id = :waybillId</query>
+		</named-query>
+		<named-query name="Vehicle.findAll">
+			<query>select v from Vehicle v</query>
+		</named-query>
+		<named-query name="Vehicle.findByPackageId">
+			<query>select v from Vehicle v join v.packages w join w.item p where p.id = :packageId</query>
+		</named-query>
+		<named-query name="Vehicle.findByDriverId">
+			<query>select v from Vehicle v where v.driver.id = :driverId</query>
+		</named-query>
+		<attributes>
+			<id name="id">
+				<generated-value/>
+			</id>
+			<one-to-many name="packages" target-entity="org.eclipse.examples.toast.backend.data.internal.Waybill">
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-many>
+           <one-to-one name="driver" target-entity="org.eclipse.examples.toast.backend.data.internal.Driver">
+                <cascade>
+                    <cascade-persist />
+                    <cascade-merge />
+                </cascade>
+            </one-to-one>
+			<one-to-one name="currentLocation" target-entity="org.eclipse.examples.toast.backend.data.internal.TrackedLocation">
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+			<one-to-one name="emergencyLocation" target-entity="org.eclipse.examples.toast.backend.data.internal.TrackedLocation">
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-one>
+		</attributes>
+	</entity>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.Waybill">
+		<table name="WAYBILL">
+		</table>
+		<named-query name="Waybill.findAll">
+			<query>select w from Waybill w</query>
+		</named-query>
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+			<basic name="sent">
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="received">
+				<temporal>DATE</temporal>
+			</basic>
+			<one-to-one name="item" target-entity="org.eclipse.examples.toast.backend.data.internal.Package" fetch="LAZY">
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-one>
+			<one-to-one name="destination" target-entity="org.eclipse.examples.toast.backend.data.internal.Address">
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-one>
+			<one-to-one name="origin" target-entity="org.eclipse.examples.toast.backend.data.internal.Address">
+				<cascade>
+					<cascade-persist />
+					<cascade-merge />
+				</cascade>
+			</one-to-one>
+		</attributes>
+	</entity>
+	<entity class="org.eclipse.examples.toast.backend.data.internal.TrackedLocation">
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+		</attributes>
+	</entity>
+</entity-mappings>
