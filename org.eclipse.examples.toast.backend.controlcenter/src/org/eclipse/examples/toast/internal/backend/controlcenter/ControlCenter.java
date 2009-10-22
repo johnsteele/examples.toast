@@ -11,7 +11,6 @@
  *******************************************************************************/
 package org.eclipse.examples.toast.internal.backend.controlcenter;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,7 +19,6 @@ import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
 import org.eclipse.examples.toast.backend.controlcenter.IData;
 import org.eclipse.examples.toast.backend.data.IToastBackEndDataFactory;
 import org.eclipse.examples.toast.backend.data.IVehicle;
-import org.eclipse.examples.toast.backend.data.internal.TrackedLocation;
 import org.eclipse.examples.toast.backend.data.internal.Vehicle;
 import org.eclipse.examples.toast.backend.provisioning.IProvisioner;
 import org.eclipse.examples.toast.core.LogUtility;
@@ -28,7 +26,6 @@ import org.eclipse.examples.toast.core.discovery.IDiscovery;
 import org.eclipse.examples.toast.core.discovery.IDiscoveryListener;
 
 public class ControlCenter implements IControlCenter, IDiscoveryListener {
-	private Map vehiclesById = new HashMap();
 	private IProvisioner provisioner;
 	private IDiscovery discovery;
 	private IData data;
@@ -41,7 +38,6 @@ public class ControlCenter implements IControlCenter, IDiscoveryListener {
 		Collection vehicles = data.getVehicles();
 		for (Iterator i = vehicles.iterator(); i.hasNext();) {
 			IVehicle vehicle = (IVehicle) i.next();
-			vehiclesById.put(vehicle.getName(), vehicle);
 			Map properties = new HashMap();
 			properties.put("osgi.os", System.getProperty("osgi.os"));
 			properties.put("osgi.ws", System.getProperty("osgi.ws"));
@@ -50,7 +46,7 @@ public class ControlCenter implements IControlCenter, IDiscoveryListener {
 		}
 	}
 
-	public void bind(IDiscovery value) {
+	public void setDiscovery(IDiscovery value) {
 		discovery = value;
 	}
 
@@ -58,11 +54,11 @@ public class ControlCenter implements IControlCenter, IDiscoveryListener {
 		data = value;
 	}
 
-	public void bind(IProvisioner value) {
+	public void setProvisioner(IProvisioner value) {
 		provisioner = value;
 	}
 
-	public void activate() {
+	public void startup() {
 		Runnable work = new Runnable() {
 			public void run() {
 				loadData();
@@ -75,96 +71,50 @@ public class ControlCenter implements IControlCenter, IDiscoveryListener {
 		new Thread(work).run();
 	}
 
-	public void unbind(IDiscovery value) {
-		discovery = null;
-	}
-
-	public void unbind(IProvisioner value) {
-		provisioner = null;
-	}
-
-	public void deactivate() {
+	public void shutdown() {
 		discovery.removeListener(this);
 	}
 
-	public boolean emergency(String id, int latitude, int longitude, int heading, int speed) {
-		IVehicle vehicle = addVehicle(id, null);
-		TrackedLocation location = createLocation(latitude, longitude, heading, speed);
-		System.out.println("Emergency reported!");
-		System.out.println(printLocation(location));
-		((Vehicle) vehicle).setEmergencyLocation(location);
-		((Vehicle) vehicle).setCurrentLocation(location);
-		return true;
-	}
-
-	private String printLocation(TrackedLocation location) {
-		StringBuffer result = new StringBuffer();
-		result.append(" heading: ");
-		result.append(location.getHeading());
-		result.append(", latitude: ");
-		result.append(location.getLatitude());
-		result.append(", longitude: ");
-		result.append(location.getLongitude());
-		result.append(", speed: ");
-		result.append(location.getSpeed());
-		result.append(", time: ");
-		result.append(location.getTime());
-		return result.toString();
-	}
-
-	public void postLocation(String id, int latitude, int longitude, int heading, int speed) {
-		IVehicle vehicle = addVehicle(id, null);
-		TrackedLocation location = createLocation(latitude, longitude, heading, speed);
-		System.out.println("Location reported");
-		System.out.println(printLocation(location));
-		((Vehicle) vehicle).setCurrentLocation(location);
-	}
-
-	private TrackedLocation createLocation(int latitude, int longitude, int heading, int speed) {
-		TrackedLocation location = (TrackedLocation) IToastBackEndDataFactory.eINSTANCE.createTrackedLocation();
-		location.setHeading(heading);
-		location.setLatitude(latitude);
-		location.setLongitude(longitude);
-		location.setSpeed(speed);
-		location.setTime(System.currentTimeMillis());
-		return location;
-	}
-
 	public Collection getKnownIds() {
-		return new ArrayList(vehiclesById.keySet());
+		return data.getVehicleNames();
 	}
 
 	public Collection getVehicles() {
-		return new ArrayList(vehiclesById.values());
+		return data.getVehicles();
 	}
 
-	public IVehicle getVehicle(String id) {
-		return (IVehicle) vehiclesById.get(id);
+	public IVehicle getVehicle(String name) {
+		return data.getVehicle(name);
 	}
 
-	public IVehicle addVehicle(String id, Map properties) {
-		IVehicle result = (IVehicle) vehiclesById.get(id);
-		if (result != null)
+	public IVehicle addVehicle(String name, Map properties) {
+		IVehicle result = getVehicle(name);
+		if (result != null) {
 			return result;
+		}
 		Vehicle vehicle = (Vehicle) IToastBackEndDataFactory.eINSTANCE.createVehicle();
-		vehicle.setName(id);
-		vehiclesById.put(id, vehicle);
-		provisioner.addProfile(id, properties);
+		vehicle.setName(name);
+		data.persist(vehicle);
+		provisioner.addProfile(name, properties);
 		return vehicle;
 	}
 
-	public void removeVehicle(String id) {
-		vehiclesById.remove(id);
-		provisioner.removeProfile(id);
+	// TODO Semantics of removeVehicle are unclear as this method is never called
+	public void removeVehicle(String name) {
+		provisioner.removeProfile(name);
 	}
 
 	public void registered(String id, Map properties) {
 		LogUtility.logDebug(this, "Vehicle registered: " + id);
-		addVehicle(id, properties);
+		IVehicle vehicle = addVehicle(id, properties);
+		vehicle.setOnline(true);
+		data.update(vehicle);
 	}
 
-	public void unregistered(String id) {
-		LogUtility.logDebug(this, "Vehicle unregistered: " + id);
-		vehiclesById.remove(id);
+	public void unregistered(String name) {
+		LogUtility.logDebug(this, "Vehicle unregistered: " + name);
+		IVehicle vehicle = addVehicle(name, null);
+		vehicle.setOnline(false);
+		data.update(vehicle);
 	}
 }

@@ -4,7 +4,7 @@
   <service>
     <provide interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter"/>
   </service> 
-  <reference bind="bind" interface="org.eclipse.examples.toast.backend.provisioning.IProvisioner" name="provisioner" unbind="unbind"/>
-  <reference bind="bind" interface="org.eclipse.examples.toast.core.discovery.IDiscovery" name="discovery" unbind="unbind"/>
+  <reference bind="setProvisioner" interface="org.eclipse.examples.toast.backend.provisioning.IProvisioner" name="provisioner"/>
+  <reference bind="setDiscovery" interface="org.eclipse.examples.toast.core.discovery.IDiscovery" name="discovery"/>
   <reference bind="setData" cardinality="1..1" interface="org.eclipse.examples.toast.backend.controlcenter.IData" name="data" policy="static"/>
  </scr:component>

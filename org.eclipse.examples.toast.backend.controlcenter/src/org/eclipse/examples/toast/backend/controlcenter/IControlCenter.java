@@ -16,10 +16,6 @@ import java.util.Map;
 import org.eclipse.examples.toast.backend.data.IVehicle;
 
 public interface IControlCenter {
-	public boolean emergency(String id, int latitude, int longitude, int heading, int speed);
-
-	public void postLocation(String id, int latitude, int longitude, int heading, int speed);
-
 	public Collection getVehicles();
 
 	public IVehicle getVehicle(String id);

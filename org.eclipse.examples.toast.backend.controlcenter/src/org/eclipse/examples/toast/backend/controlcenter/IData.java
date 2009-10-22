@@ -12,7 +12,18 @@
 package org.eclipse.examples.toast.backend.controlcenter;
 
 import java.util.Collection;
+import org.eclipse.examples.toast.backend.data.IVehicle;
 
 public interface IData {
 	public Collection getVehicles();
+
+	public void update(IVehicle object);
+
+	public void persist(IVehicle object);
+
+	public void removeVehicle(String name);
+
+	public Collection getVehicleNames();
+
+	public IVehicle getVehicle(String name);
 }
