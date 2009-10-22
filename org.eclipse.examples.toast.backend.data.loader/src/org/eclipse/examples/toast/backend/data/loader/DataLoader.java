@@ -58,7 +58,7 @@ public class DataLoader {
 
 	String[] drivers = readDrivers();
 
-	public Collection run() {
+	public List run() {
 		ArrayList result = new ArrayList();
 		try {
 			BufferedReader in = null;
@@ -203,12 +203,6 @@ public class DataLoader {
 		} else {
 			driver.setFirstName("Driver");
 			driver.setLastName(String.valueOf(n));
-			try {
-				driver.setImage(new URI("http://www.eclipse.org"));
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 		return driver;
 	}
