@@ -27,6 +27,7 @@ import java.util.List;
  *   <li>{@link org.eclipse.examples.toast.backend.data.IVehicle#getDriver <em>Driver</em>}</li>
  *   <li>{@link org.eclipse.examples.toast.backend.data.IVehicle#getPackages <em>Packages</em>}</li>
  *   <li>{@link org.eclipse.examples.toast.backend.data.IVehicle#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.examples.toast.backend.data.IVehicle#isOnline <em>Online</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,5 +137,32 @@ public interface IVehicle {
 	 * @generated
 	 */
 	void setId(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Online</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Online</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Online</em>' attribute.
+	 * @see #setOnline(boolean)
+	 * @see org.eclipse.examples.toast.backend.data.IToastBackEndDataPackage#getVehicle_Online()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isOnline();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.examples.toast.backend.data.IVehicle#isOnline <em>Online</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Online</em>' attribute.
+	 * @see #isOnline()
+	 * @generated
+	 */
+	void setOnline(boolean value);
 
 } // IVehicle

@@ -386,13 +386,22 @@ public interface IToastBackEndDataPackage extends EPackage {
 	int VEHICLE__ID = 5;
 
 	/**
+	 * The feature id for the '<em><b>Online</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VEHICLE__ONLINE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Vehicle</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE_FEATURE_COUNT = 6;
+	int VEHICLE_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.examples.toast.backend.data.internal.Waybill <em>Waybill</em>}' class.
@@ -869,6 +878,17 @@ public interface IToastBackEndDataPackage extends EPackage {
 	EAttribute getVehicle_Id();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.examples.toast.backend.data.IVehicle#isOnline <em>Online</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Online</em>'.
+	 * @see org.eclipse.examples.toast.backend.data.IVehicle#isOnline()
+	 * @see #getVehicle()
+	 * @generated
+	 */
+	EAttribute getVehicle_Online();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.examples.toast.backend.data.IWaybill <em>Waybill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1288,6 +1308,14 @@ public interface IToastBackEndDataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VEHICLE__ID = eINSTANCE.getVehicle_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Online</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VEHICLE__ONLINE = eINSTANCE.getVehicle_Online();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.examples.toast.backend.data.internal.Waybill <em>Waybill</em>}' class.

@@ -47,6 +47,7 @@ import org.eclipse.examples.toast.backend.data.IWaybill;
  *   <li>{@link org.eclipse.examples.toast.backend.data.internal.Vehicle#getDriver <em>Driver</em>}</li>
  *   <li>{@link org.eclipse.examples.toast.backend.data.internal.Vehicle#getPackages <em>Packages</em>}</li>
  *   <li>{@link org.eclipse.examples.toast.backend.data.internal.Vehicle#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.examples.toast.backend.data.internal.Vehicle#isOnline <em>Online</em>}</li>
  * </ul>
  * </p>
  *
@@ -132,6 +133,26 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 	 * @ordered
 	 */
 	protected int id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOnline() <em>Online</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnline()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ONLINE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnline() <em>Online</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnline()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean online = ONLINE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -335,6 +356,27 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOnline() {
+		return online;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnline(boolean newOnline) {
+		boolean oldOnline = online;
+		online = newOnline;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IToastBackEndDataPackage.VEHICLE__ONLINE, oldOnline, online));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -367,6 +409,8 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 				return getPackages();
 			case IToastBackEndDataPackage.VEHICLE__ID:
 				return getId();
+			case IToastBackEndDataPackage.VEHICLE__ONLINE:
+				return isOnline();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -399,6 +443,9 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 			case IToastBackEndDataPackage.VEHICLE__ID:
 				setId((Integer)newValue);
 				return;
+			case IToastBackEndDataPackage.VEHICLE__ONLINE:
+				setOnline((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -429,6 +476,9 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 			case IToastBackEndDataPackage.VEHICLE__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case IToastBackEndDataPackage.VEHICLE__ONLINE:
+				setOnline(ONLINE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -453,6 +503,8 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 				return packages != null && !packages.isEmpty();
 			case IToastBackEndDataPackage.VEHICLE__ID:
 				return id != ID_EDEFAULT;
+			case IToastBackEndDataPackage.VEHICLE__ONLINE:
+				return online != ONLINE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -471,6 +523,8 @@ public class Vehicle extends EObjectImpl implements IVehicle {
 		result.append(name);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", online: ");
+		result.append(online);
 		result.append(')');
 		return result.toString();
 	}

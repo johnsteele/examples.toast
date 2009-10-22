@@ -117,20 +117,10 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this
-	 * model, and for any others upon which it depends.  Simple
-	 * dependencies are satisfied by calling this method on all
-	 * dependent packages before doing anything else.  This method drives
-	 * initialization for interdependent packages directly, in parallel
-	 * with this package, itself.
-	 * <p>Of this package and its interdependencies, all packages which
-	 * have not yet been registered by their URI values are first created
-	 * and registered.  The packages are then initialized in two steps:
-	 * meta-model objects for all of the packages are created before any
-	 * are initialized, since one package's meta-model objects may refer to
-	 * those of another.
-	 * <p>Invocation of this method will not affect any packages that have
-	 * already been initialized.
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link IToastBackEndDataPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
@@ -139,11 +129,10 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public static IToastBackEndDataPackage init() {
-		if (isInited)
-			return (IToastBackEndDataPackage) EPackage.Registry.INSTANCE.getEPackage(IToastBackEndDataPackage.eNS_URI);
+		if (isInited) return (IToastBackEndDataPackage)EPackage.Registry.INSTANCE.getEPackage(IToastBackEndDataPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ToastBackEndDataPackage theToastBackEndDataPackage = (ToastBackEndDataPackage) (EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof ToastBackEndDataPackage ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new ToastBackEndDataPackage());
+		ToastBackEndDataPackage theToastBackEndDataPackage = (ToastBackEndDataPackage)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ToastBackEndDataPackage ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ToastBackEndDataPackage());
 
 		isInited = true;
 
@@ -156,6 +145,9 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 		// Mark meta-data to indicate it can't be changed
 		theToastBackEndDataPackage.freeze();
 
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(IToastBackEndDataPackage.eNS_URI, theToastBackEndDataPackage);
 		return theToastBackEndDataPackage;
 	}
 
@@ -174,7 +166,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getAddress_Area() {
-		return (EAttribute) addressEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -183,7 +175,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getAddress_City() {
-		return (EAttribute) addressEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -192,7 +184,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getAddress_Country() {
-		return (EAttribute) addressEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -201,7 +193,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getAddress_Postcode() {
-		return (EAttribute) addressEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -210,7 +202,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getAddress_Street() {
-		return (EAttribute) addressEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -219,7 +211,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getAddress_Id() {
-		return (EAttribute) addressEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -237,7 +229,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getDriver_Address() {
-		return (EReference) driverEClass.getEStructuralFeatures().get(0);
+		return (EReference)driverEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -246,7 +238,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getDriver_FirstName() {
-		return (EAttribute) driverEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)driverEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -255,7 +247,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getDriver_Image() {
-		return (EAttribute) driverEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)driverEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -264,7 +256,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getDriver_LastName() {
-		return (EAttribute) driverEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)driverEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -273,7 +265,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getDriver_Id() {
-		return (EAttribute) driverEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)driverEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -291,7 +283,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getPackage_Waybill() {
-		return (EReference) packageEClass.getEStructuralFeatures().get(0);
+		return (EReference)packageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -300,7 +292,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getPackage_Weight() {
-		return (EAttribute) packageEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -309,7 +301,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getPackage_Id() {
-		return (EAttribute) packageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -327,7 +319,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getTrackedLocation_Heading() {
-		return (EAttribute) trackedLocationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)trackedLocationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -336,7 +328,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getTrackedLocation_Latitude() {
-		return (EAttribute) trackedLocationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)trackedLocationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -345,7 +337,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getTrackedLocation_Longitude() {
-		return (EAttribute) trackedLocationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)trackedLocationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -354,7 +346,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getTrackedLocation_Speed() {
-		return (EAttribute) trackedLocationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)trackedLocationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -363,7 +355,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getTrackedLocation_Time() {
-		return (EAttribute) trackedLocationEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)trackedLocationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -372,7 +364,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getTrackedLocation_Id() {
-		return (EAttribute) trackedLocationEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)trackedLocationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -390,7 +382,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getVehicle_CurrentLocation() {
-		return (EReference) vehicleEClass.getEStructuralFeatures().get(0);
+		return (EReference)vehicleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -399,7 +391,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getVehicle_EmergencyLocation() {
-		return (EReference) vehicleEClass.getEStructuralFeatures().get(1);
+		return (EReference)vehicleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -408,7 +400,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getVehicle_Name() {
-		return (EAttribute) vehicleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)vehicleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -417,7 +409,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getVehicle_Driver() {
-		return (EReference) vehicleEClass.getEStructuralFeatures().get(3);
+		return (EReference)vehicleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -426,7 +418,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getVehicle_Packages() {
-		return (EReference) vehicleEClass.getEStructuralFeatures().get(4);
+		return (EReference)vehicleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -435,7 +427,16 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getVehicle_Id() {
-		return (EAttribute) vehicleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)vehicleEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVehicle_Online() {
+		return (EAttribute)vehicleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -453,7 +454,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getWaybill_Id() {
-		return (EAttribute) waybillEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)waybillEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -462,7 +463,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getWaybill_Item() {
-		return (EReference) waybillEClass.getEStructuralFeatures().get(1);
+		return (EReference)waybillEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -471,7 +472,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getWaybill_Received() {
-		return (EAttribute) waybillEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)waybillEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -480,7 +481,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getWaybill_Sent() {
-		return (EAttribute) waybillEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)waybillEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -489,7 +490,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getWaybill_Destination() {
-		return (EReference) waybillEClass.getEStructuralFeatures().get(4);
+		return (EReference)waybillEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -498,7 +499,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getWaybill_Origin() {
-		return (EReference) waybillEClass.getEStructuralFeatures().get(5);
+		return (EReference)waybillEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -516,7 +517,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getHub_Vehicles() {
-		return (EReference) hubEClass.getEStructuralFeatures().get(0);
+		return (EReference)hubEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -525,7 +526,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getHub_Waybills() {
-		return (EReference) hubEClass.getEStructuralFeatures().get(1);
+		return (EReference)hubEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -534,7 +535,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EReference getHub_Drivers() {
-		return (EReference) hubEClass.getEStructuralFeatures().get(2);
+		return (EReference)hubEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -543,7 +544,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public EAttribute getHub_Id() {
-		return (EAttribute) hubEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)hubEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -561,7 +562,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public IToastBackEndDataFactory getToastBackEndDataFactory() {
-		return (IToastBackEndDataFactory) getEFactoryInstance();
+		return (IToastBackEndDataFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -579,8 +580,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -619,6 +619,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 		createEReference(vehicleEClass, VEHICLE__DRIVER);
 		createEReference(vehicleEClass, VEHICLE__PACKAGES);
 		createEAttribute(vehicleEClass, VEHICLE__ID);
+		createEAttribute(vehicleEClass, VEHICLE__ONLINE);
 
 		waybillEClass = createEClass(WAYBILL);
 		createEAttribute(waybillEClass, WAYBILL__ID);
@@ -653,8 +654,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -704,6 +704,7 @@ public class ToastBackEndDataPackage extends EPackageImpl implements IToastBackE
 		initEReference(getVehicle_Driver(), this.getDriver(), null, "driver", null, 0, 1, IVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVehicle_Packages(), this.getWaybill(), null, "packages", null, 0, -1, IVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVehicle_Id(), ecorePackage.getEInt(), "id", null, 0, 1, IVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVehicle_Online(), ecorePackage.getEBoolean(), "online", "false", 0, 1, IVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(waybillEClass, IWaybill.class, "Waybill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWaybill_Id(), ecorePackage.getEInt(), "id", null, 0, 1, IWaybill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
