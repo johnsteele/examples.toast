@@ -2,5 +2,5 @@
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="startup" deactivate="shutdown" name="org.eclipse.examples.toast.backend.emergency">
   <implementation class="org.eclipse.examples.toast.internal.backend.emergency.bundle.Component"/>
   <reference bind="setHttp" interface="org.osgi.service.http.HttpService" name="http"/>
-  <reference bind="setControlCenter" interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter" name="controlCenter"/>
+  <reference bind="setEmergencyCenter" interface="org.eclipse.examples.toast.backend.controlcenter.IEmergencyCenter" name="emergencyCenter"/>
 </scr:component>

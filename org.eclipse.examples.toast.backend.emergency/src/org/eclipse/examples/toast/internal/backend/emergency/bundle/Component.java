@@ -11,21 +11,21 @@
  *******************************************************************************/
 package org.eclipse.examples.toast.internal.backend.emergency.bundle;
 
-import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
 import org.eclipse.examples.toast.core.ICoreConstants;
 import org.eclipse.examples.toast.core.LogUtility;
 import org.eclipse.examples.toast.core.PropertyManager;
 import org.eclipse.examples.toast.core.UrlBuilder;
+import org.eclipse.examples.toast.core.emergency.IEmergencyCenter;
 import org.eclipse.examples.toast.core.emergency.IEmergencyConstants;
 import org.eclipse.examples.toast.internal.backend.emergency.EmergencyServlet;
 import org.osgi.service.http.HttpService;
 
 public class Component {
-	private IControlCenter center;
+	private IEmergencyCenter center;
 	private HttpService http;
 	private String servletAlias;
 
-	public void setControlCenter(IControlCenter value) {
+	public void setEmergencyCenter(IEmergencyCenter value) {
 		center = value;
 	}
 

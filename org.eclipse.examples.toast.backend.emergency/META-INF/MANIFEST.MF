@@ -4,10 +4,12 @@ Bundle-Name: Toast Back End Emergency
 Bundle-SymbolicName: org.eclipse.examples.toast.backend.emergency
 Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: J2SE-1.4
-Service-Component: OSGI-INF/component.xml
+Service-Component: OSGI-INF/component.xml,OSGI-INF/emergencyCenter.xml
 Import-Package: javax.servlet;version="2.4.0",
  javax.servlet.http;version="2.4.0",
  org.eclipse.examples.toast.backend.controlcenter,
+ org.eclipse.examples.toast.backend.data,
+ org.eclipse.examples.toast.backend.data.internal,
  org.eclipse.examples.toast.core;version="[1.0.0,2.0.0)",
  org.eclipse.examples.toast.core.emergency;version="[1.0.0,2.0.0)",
  org.osgi.service.http;version="[1.2.0,2.0.0)"

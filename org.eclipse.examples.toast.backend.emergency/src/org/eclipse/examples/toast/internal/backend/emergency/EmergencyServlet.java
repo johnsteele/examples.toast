@@ -17,14 +17,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
 import org.eclipse.examples.toast.core.ICoreConstants;
+import org.eclipse.examples.toast.core.emergency.IEmergencyCenter;
 import org.eclipse.examples.toast.core.emergency.IEmergencyConstants;
 
 public class EmergencyServlet extends HttpServlet {
-	private IControlCenter center;
+	private IEmergencyCenter center;
 
-	public EmergencyServlet(IControlCenter center) {
+	public EmergencyServlet(IEmergencyCenter center) {
 		super();
 		this.center = center;
 	}
@@ -35,9 +35,9 @@ public class EmergencyServlet extends HttpServlet {
 		int longitude = Integer.parseInt(getParameter(request, response, IEmergencyConstants.LONGITUDE_PARAMETER));
 		int heading = Integer.parseInt(getParameter(request, response, IEmergencyConstants.HEADING_PARAMETER));
 		int speed = Integer.parseInt(getParameter(request, response, IEmergencyConstants.SPEED_PARAMETER));
-		center.emergency(id, latitude, longitude, heading, speed);
+		String reply = center.emergency(id, latitude, longitude, heading, speed);
 		PrintWriter writer = response.getWriter();
-		writer.print("Help is on its way!");
+		writer.print(reply);
 		response.setContentType(ICoreConstants.CONTENT_TYPE_PLAIN);
 	}
 
