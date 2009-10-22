@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toast Database Loader/Primer
+Bundle-SymbolicName: org.eclipse.examples.toast.backend.data.persistence.init;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.examples.toast.backend.data.loader;bundle-version="1.0.0",
+ org.eclipse.examples.toast.backend.data.persistence;bundle-version="1.0.0",
+ org.eclipse.equinox.app;bundle-version="1.2.0",
+ org.eclipse.examples.toast.backend.controlcenter;bundle-version="1.0.0"
+Import-Package: org.apache.derby.jdbc,
+ org.osgi.framework;version="1.5.0"

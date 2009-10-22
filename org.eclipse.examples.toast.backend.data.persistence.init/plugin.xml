@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="databaseloader"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="1"
+            thread="main"
+            visible="true">
+         <run
+               class="org.eclipse.examples.toast.backend.data.persistence.init.DatabaseLoaderApplication">
+         </run>
+      </application>
+   </extension>
+</plugin>
