@@ -29,7 +29,7 @@ import org.eclipse.ui.part.ViewPart;
 
 public class MapsView extends ViewPart {
 
-	public static final String ID = "org.eclipse.examples.toast.backend.rap.mapview";
+	public static final String ID = "org.eclipse.examples.toast.backend.rap.mapview"; //$NON-NLS-1$
 	private GMap map;
 
 	/*
@@ -41,7 +41,7 @@ public class MapsView extends ViewPart {
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new FillLayout());
 		map = new GMap(parent, SWT.NONE);
-		map.setCenter(new Location("5001 Great America Pkwy, Santa Clara, CA 95054"));
+		map.setCenter(new Location("5001 Great America Pkwy, Santa Clara, CA 95054")); //$NON-NLS-1$
 		createSelectionListener();
 	}
 
@@ -65,7 +65,6 @@ public class MapsView extends ViewPart {
 					IStructuredSelection sselection = (IStructuredSelection) selection;
 					IVehicle firstVehicle = (IVehicle) sselection.getFirstElement();
 					if (firstVehicle != null) {
-						System.out.println("vehicle " + firstVehicle);
 						ITrackedLocation location = firstVehicle.getCurrentLocation();
 						double lat = location.getLatitude() / 100000.0;
 						double lon = location.getLongitude() / 100000.0;

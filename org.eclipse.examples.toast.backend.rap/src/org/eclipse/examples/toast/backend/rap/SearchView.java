@@ -52,7 +52,7 @@ public class SearchView extends ViewPart {
 	private static final int COL_VEHICLE_ID = 0;
 	private static final int COL_DRIVER_NAME = 1;
 
-	public static final String ID = "org.eclipse.examples.toast.backend.rap.searchView";
+	public static final String ID = "org.eclipse.examples.toast.backend.rap.searchView"; //$NON-NLS-1$
 
 	private Text filterText;
 	private TableViewer viewer;
@@ -62,8 +62,8 @@ public class SearchView extends ViewPart {
 
 	static final class VehicleLabelProvider extends CellLabelProvider {
 
-		private static Image CAR_IMAGE = Activator.getImageDescriptor("/icons/car.png").createImage();
-		private static Image CAR_PROBLEM_IMAGE = Activator.getImageDescriptor("/icons/car_red.png").createImage();
+		private static Image CAR_IMAGE = Activator.getImageDescriptor("/icons/car.png").createImage(); //$NON-NLS-1$
+		private static Image CAR_PROBLEM_IMAGE = Activator.getImageDescriptor("/icons/car_red.png").createImage(); //$NON-NLS-1$
 
 		public void update(final ViewerCell cell) {
 			IVehicle vehicle = (IVehicle) cell.getElement();
@@ -95,7 +95,7 @@ public class SearchView extends ViewPart {
 			return compare(object1, object2);
 		}
 
-		public boolean isSorterProperty(final Object elem, final String property) {
+		public boolean isSorterProperty(final Object elem, final String releventProperty) {
 			return true;
 		}
 
@@ -130,7 +130,7 @@ public class SearchView extends ViewPart {
 				result = false;
 				String vid = vehicle.getName().toLowerCase();
 				result |= vid.indexOf(text) != -1;
-				String driverName = (vehicle.getDriver().getLastName() + ", " + vehicle.getDriver().getFirstName()).toLowerCase();
+				String driverName = (vehicle.getDriver().getLastName() + ", " + vehicle.getDriver().getFirstName()).toLowerCase(); //$NON-NLS-1$
 				result |= driverName.indexOf(text) != -1;
 			}
 			return result;
@@ -205,7 +205,7 @@ public class SearchView extends ViewPart {
 		clearButton.setImage(clearImage);
 		clearButton.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				filterText.setText("");
+				filterText.setText(""); //$NON-NLS-1$
 			}
 		});
 		return composite;

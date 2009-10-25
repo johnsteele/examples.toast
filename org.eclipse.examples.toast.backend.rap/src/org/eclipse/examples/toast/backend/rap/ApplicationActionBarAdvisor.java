@@ -48,17 +48,25 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	protected void makeActions(final IWorkbenchWindow window) {
 		exitAction = ActionFactory.QUIT.create(window);
 		register(exitAction);
-		driversAction = new Action("Drivers", Activator.getImageDescriptor("/icons/drivers-22.png")) {};
-		driversAction.setId("actions.drivers");
+		driversAction = new Action("Drivers", Activator.getImageDescriptor("/icons/drivers-22.png")) { //$NON-NLS-2$
+			// no op
+		};
+		driversAction.setId("actions.drivers"); //$NON-NLS-1$
 		register(driversAction);
-		packagesAction = new Action("Packages", Activator.getImageDescriptor("/icons/package-22.png")) {};
-		packagesAction.setId("actions.packages");
+		packagesAction = new Action("Packages", Activator.getImageDescriptor("/icons/package-22.png")) { //$NON-NLS-2$
+			// no op
+		};
+		packagesAction.setId("actions.packages"); //$NON-NLS-1$
 		register(packagesAction);
-		settingsAction = new Action("Settings", Activator.getImageDescriptor("/icons/settings-22.png")) {};
-		settingsAction.setId("actions.settings");
+		settingsAction = new Action("Settings", Activator.getImageDescriptor("/icons/settings-22.png")) { //$NON-NLS-2$
+			// no op
+		};
+		settingsAction.setId("actions.settings"); //$NON-NLS-1$
 		register(settingsAction);
-		emergencyAction = new Action("Emergency", Activator.getImageDescriptor("/icons/emergency-22.png")) {};
-		emergencyAction.setId("actions.settings");
+		emergencyAction = new Action("Emergency", Activator.getImageDescriptor("/icons/emergency-22.png")) { //$NON-NLS-2$
+			// no op
+		};
+		emergencyAction.setId("actions.emergency"); //$NON-NLS-1$
 		register(emergencyAction);
 	}
 
@@ -81,7 +89,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 
 	protected void fillCoolBar(ICoolBarManager coolBar) {
 		IToolBarManager toolbar = new ToolBarManager(SWT.FLAT | SWT.RIGHT);
-		coolBar.add(new ToolBarContributionItem(toolbar, "main"));
+		coolBar.add(new ToolBarContributionItem(toolbar, "main")); //$NON-NLS-1$
 		toolbar.add(driversAction);
 		toolbar.add(packagesAction);
 		toolbar.add(settingsAction);

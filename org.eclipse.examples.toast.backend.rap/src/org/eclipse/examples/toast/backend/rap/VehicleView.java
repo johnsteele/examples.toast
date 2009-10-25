@@ -42,8 +42,8 @@ import org.eclipse.ui.part.ViewPart;
 
 public class VehicleView extends ViewPart {
 
-	public static final String ID = "org.eclipse.examples.toast.backend.rap.vehicleView";
-	private static final Image DEFAULT_IMAGE = Graphics.getImage("/icons/default_user.png", VehicleView.class.getClassLoader());
+	public static final String ID = "org.eclipse.examples.toast.backend.rap.vehicleView"; //$NON-NLS-1$
+	private static final Image DEFAULT_IMAGE = Graphics.getImage("/icons/default_user.png", VehicleView.class.getClassLoader()); //$NON-NLS-1$
 	private IVehicle vehicle;
 	private Composite parent;
 	private Label photoLabel;
@@ -182,7 +182,7 @@ public class VehicleView extends ViewPart {
 		ITrackedLocation location = vehicle.getCurrentLocation();
 		String lonStr = String.valueOf(location.getLongitude() / 100000.0);
 		String latStr = String.valueOf(location.getLatitude() / 100000.0);
-		locationLabel.setText(latStr + ", " + lonStr);
+		locationLabel.setText(latStr + ", " + lonStr); //$NON-NLS-1$
 		headingLabel.setText(getDirection(location.getHeading()) + " at " + location.getSpeed() + " mph");
 		editProfileButton.setEnabled(vehicle != null);
 		photoLabel.getParent().layout();
