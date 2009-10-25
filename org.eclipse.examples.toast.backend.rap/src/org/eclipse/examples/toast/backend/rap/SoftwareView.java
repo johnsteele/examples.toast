@@ -103,7 +103,7 @@ public class SoftwareView extends ViewPart {
 		IProvisioner provisioner = Component.getProvisioner();
 		if (provisioner == null)
 			return new ArrayList();
-		return provisioner.getAvailableFeatures(vehicle.getName());
+		return provisioner.getAvailableFeatures();
 	}
 
 	private Collection getInstalledPackages(IVehicle vehicle) {
