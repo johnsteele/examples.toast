@@ -62,8 +62,8 @@ public class SearchView extends ViewPart {
 
 	static final class VehicleLabelProvider extends CellLabelProvider {
 
-		private static Image CAR_IMAGE = Activator.getImageDescriptor("/icons/sample3.gif").createImage();
-		private static Image CAR_PROBLEM_IMAGE = Activator.getImageDescriptor("/icons/sample2.gif").createImage();
+		private static Image CAR_IMAGE = Activator.getImageDescriptor("/icons/car.png").createImage();
+		private static Image CAR_PROBLEM_IMAGE = Activator.getImageDescriptor("/icons/car_red.png").createImage();
 
 		public void update(final ViewerCell cell) {
 			IVehicle vehicle = (IVehicle) cell.getElement();
