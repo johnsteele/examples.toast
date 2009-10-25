@@ -173,7 +173,7 @@ public class SearchView extends ViewPart {
 		if (controlCenter != null)
 			viewer.setInput(controlCenter.getVehicles());
 		// TODO [rst] hard coded dummy text to fill status bar
-		String message = "Tue, Mar 24 2009,  7:21 am: " + " Vehicle: CA-SAN FRANCISCO-10 reports emergency at 37,7897, -122.3942";
+		String message = "Tue, Oct 27 2009,  7:21 am: " + " Vehicle: CA-SAN FRANCISCO-10 reports emergency at 37,7897, -122.3942";
 		IStatusLineManager statusLineMgr = getViewSite().getActionBars().getStatusLineManager();
 		statusLineMgr.setMessage(message);
 	}
