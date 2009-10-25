@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.team.cvs.core.cvsnature">
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.controlcenter,org.eclipse.examples.toast.backend.controlcenter"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.data,org.eclipse.examples.toast.backend.data"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.data.eclipselink.feature,org.eclipse.examples.toast.backend.data.eclipselink.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.data.loader,org.eclipse.examples.toast.backend.data.loader"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.data.persistence,org.eclipse.examples.toast.backend.data.persistence"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.data.persistence.init,org.eclipse.examples.toast.backend.data.persistence.init"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.data.simple.feature,org.eclipse.examples.toast.backend.data.simple.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.discovery.simple,org.eclipse.examples.toast.backend.discovery.simple"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.discovery.simple.feature,org.eclipse.examples.toast.backend.discovery.simple.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.emergency,org.eclipse.examples.toast.backend.emergency"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.feature,org.eclipse.examples.toast.backend.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.p2.feature,org.eclipse.examples.toast.backend.p2.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.portal,org.eclipse.examples.toast.backend.portal"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.provisioning,org.eclipse.examples.toast.backend.provisioning"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.provisioning.ui,org.eclipse.examples.toast.backend.provisioning.ui"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.rap,org.eclipse.examples.toast.backend.rap"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.rap.feature,org.eclipse.examples.toast.backend.rap.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.tickle.simple,org.eclipse.examples.toast.backend.tickle.simple"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.tracking,org.eclipse.examples.toast.backend.tracking"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.backend.tracking.ui,org.eclipse.examples.toast.backend.tracking.ui"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.audio.feature,org.eclipse.examples.toast.client.audio.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.climate.feature,org.eclipse.examples.toast.client.climate.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.discovery.simple,org.eclipse.examples.toast.client.discovery.simple"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.discovery.simple.feature,org.eclipse.examples.toast.client.discovery.simple.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.emergency,org.eclipse.examples.toast.client.emergency"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.emergency.feature,org.eclipse.examples.toast.client.emergency.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.gps.feature,org.eclipse.examples.toast.client.gps.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.nav.guidance,org.eclipse.examples.toast.client.nav.guidance"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.nav.guidance.feature,org.eclipse.examples.toast.client.nav.guidance.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.nav.mapping.feature,org.eclipse.examples.toast.client.nav.mapping.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.provisioning,org.eclipse.examples.toast.client.provisioning"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.provisioning.feature,org.eclipse.examples.toast.client.provisioning.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.shell.feature,org.eclipse.examples.toast.client.shell.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.tickle.simple,org.eclipse.examples.toast.client.tickle.simple"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.tickle.simple.feature,org.eclipse.examples.toast.client.tickle.simple.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.tracking,org.eclipse.examples.toast.client.tracking"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.client.tracking.config,org.eclipse.examples.toast.client.tracking.config"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core,org.eclipse.examples.toast.core"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core.autostart,org.eclipse.examples.toast.core.autostart"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core.channel.sender,org.eclipse.examples.toast.core.channel.sender"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core.discovery,org.eclipse.examples.toast.core.discovery"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core.emergency,org.eclipse.examples.toast.core.emergency"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core.tickle,org.eclipse.examples.toast.core.tickle"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.core.tracking,org.eclipse.examples.toast.core.tracking"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.crust.artwork,org.eclipse.examples.toast.crust.artwork"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.crust.display,org.eclipse.examples.toast.crust.display"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.crust.shell,org.eclipse.examples.toast.crust.shell"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.crust.widgets,org.eclipse.examples.toast.crust.widgets"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.airbag,org.eclipse.examples.toast.dev.airbag"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.airbag.fake,org.eclipse.examples.toast.dev.airbag.fake"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.airbag.sim,org.eclipse.examples.toast.dev.airbag.sim"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.amplifier,org.eclipse.examples.toast.dev.amplifier"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.amplifier.fake,org.eclipse.examples.toast.dev.amplifier.fake"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.cdplayer,org.eclipse.examples.toast.dev.cdplayer"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.cdplayer.fake,org.eclipse.examples.toast.dev.cdplayer.fake"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.climate,org.eclipse.examples.toast.dev.climate"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.climate.fake,org.eclipse.examples.toast.dev.climate.fake"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.google,org.eclipse.examples.toast.dev.google"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps,org.eclipse.examples.toast.dev.gps"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps.fake,org.eclipse.examples.toast.dev.gps.fake"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.gps.sim,org.eclipse.examples.toast.dev.gps.sim"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio,org.eclipse.examples.toast.dev.radio"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.dev.radio.fake,org.eclipse.examples.toast.dev.radio.fake"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.devsim,org.eclipse.examples.toast.devsim"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.rap.widgets.drivingsimulator,org.eclipse.examples.toast.rap.widgets.drivingsimulator"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.rap.widgets.gmaps,org.eclipse.examples.toast.rap.widgets.gmaps"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.server.embedded.feature,org.eclipse.examples.toast.server.embedded.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.server.solo.jetty.feature,org.eclipse.examples.toast.server.solo.jetty.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.server.solo.simple.feature,org.eclipse.examples.toast.server.solo.simple.feature"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.audio,org.eclipse.examples.toast.swt.audio"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.climate,org.eclipse.examples.toast.swt.climate"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.emergency,org.eclipse.examples.toast.swt.emergency"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.nav.guidance.google,org.eclipse.examples.toast.swt.nav.guidance.google"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.nav.mapping.google,org.eclipse.examples.toast.swt.nav.mapping.google"/>
+<project reference="1.0,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/Toast,Toast"/>
+</provider>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256151686164_8" label="Back End" name="Back End">
+<item elementID="=org.eclipse.examples.toast.backend.portal" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.data.loader" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.data" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.provisioning" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.tracking.ui" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.discovery.simple" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.controlcenter" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.emergency" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.tickle.simple" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.tracking" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.provisioning.ui" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256151812287_9" label="Client" name="Client">
+<item elementID="=org.eclipse.examples.toast.swt.climate" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.crust.widgets" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.swt.audio" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.client.tracking" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.devsim" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.radio.fake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.audio.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.tickle.simple.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.dev.climate" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.radio" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.client.tracking.config" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.crust.shell" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.nav.mapping.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.dev.gps" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.climate.fake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.google" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.airbag.fake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.client.tickle.simple" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.gps.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.emergency.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.dev.gps.sim" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.discovery.simple.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.crust.artwork" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.client.discovery.simple" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.swt.nav.mapping.google" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.nav.guidance.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.crust.display" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.client.emergency" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.airbag.sim" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.amplifier" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.cdplayer.fake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.climate.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.dev.airbag" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.provisioning.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.dev.cdplayer" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.swt.emergency" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.client.provisioning" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.amplifier.fake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.swt.nav.guidance.google" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.dev.gps.fake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.shell.feature" type="4"/>
+<item elementID="=org.eclipse.examples.toast.client.nav.guidance" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256151850853_10" label="Core" name="Core">
+<item elementID="=org.eclipse.examples.toast.core.tracking" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.core.discovery" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.core.autostart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.core.tickle" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Toast" type="4"/>
+<item elementID="=org.eclipse.examples.toast.core.channel.sender" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.core.emergency" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256156929110_14" label="EclipseLink" name="EclipseLink">
+<item elementID="=org.eclipse.examples.toast.backend.data.persistence.init" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.backend.data.persistence" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256151949913_12" label="Features" name="Features">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.server.embedded.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.discovery.simple.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.backend.p2.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.nav.guidance.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.audio.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.backend.rap.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.tickle.simple.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.climate.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.provisioning.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.server.solo.simple.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.server.solo.jetty.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.nav.mapping.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.backend.discovery.simple.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.shell.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.backend.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.gps.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.client.emergency.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.backend.data.eclipselink.feature" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.eclipse.examples.toast.backend.data.simple.feature" type="4"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256151886732_11" label="RAP" name="RAP">
+<item elementID="=org.eclipse.examples.toast.backend.rap" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.rap.widgets.drivingsimulator" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.eclipse.examples.toast.rap.widgets.gmaps" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+</psf>
