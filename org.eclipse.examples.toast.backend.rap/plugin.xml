@@ -76,6 +76,22 @@
             servletName="fleet-basic"
             title="Toast Fleet Manager">
       </branding>
+      <branding
+            defaultEntrypointId="org.eclipse.examples.toast.backend.rap.entrypoint1"
+            favicon="icons/sample.gif"
+            id="org.eclipse.examples.toast.backend.rap.toastBrandingBusiness"
+            servletName="fleet"
+            title="Toast Fleet Manager"
+            themeId="org.eclipse.rap.design.example.business.theme">
+              <presentationFactory
+                defaultLayoutId="org.eclipse.rap.design.example.business.layout"
+                id="org.eclipse.rap.design.example.business.factory"
+                name="Business Presentation Factory">
+              <defaultStackPresentation
+                id="org.eclipse.rap.design.example.stack.view">
+            </defaultStackPresentation>
+         </presentationFactory>
+      </branding>
    </extension>
 
 </plugin>
