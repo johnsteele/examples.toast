@@ -18,7 +18,9 @@ import org.eclipse.examples.toast.backend.data.IAddress;
 import org.eclipse.examples.toast.backend.data.IDriver;
 import org.eclipse.examples.toast.backend.data.ITrackedLocation;
 import org.eclipse.examples.toast.backend.data.IVehicle;
-import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.examples.toast.backend.data.internal.Driver;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.rwt.graphics.Graphics;
@@ -144,7 +146,12 @@ public class VehicleView extends ViewPart {
 	}
 
 	protected void editProfile(final IVehicle vehicle) {
-		MessageDialog.openError(parent.getShell(), "Edit Failed", "The profile is currently locked and cannot be edited.");
+		InputDialog dialog = new InputDialog(parent.getShell(), "Driver Name", "Enter a new driver name", vehicle.getDriver().getFirstName(), null);
+		if (dialog.open() == Dialog.CANCEL)
+			return;
+		String name = dialog.getValue();
+		if (name != null)
+			((Driver) vehicle.getDriver()).setFirstName(name);
 	}
 
 	private void createSelectionListener() {
