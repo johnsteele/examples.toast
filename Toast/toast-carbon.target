@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.5"?>
 
-<target name="Toast Target for Carbon">
+<target name="Toast Target">
 <locations>
 <location includeAllPlatforms="false" includeMode="slicer" type="InstallableUnit">
 <unit id="org.eclipse.ecf.core.feature.group" version="3.0.1.v20090916-2238"/>
 <unit id="org.eclipse.rcp.sdk.id" version="3.5.1.M20090917-0800"/>
+<unit id="org.eclipse.persistence.jpa.feature.group" version="1.1.2.v20090612-r4475"/>
 <unit id="org.eclipse.emf.sdk.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.teneo.eclipselink.sdk.feature.group" version="1.0.0.v200909151729-31184E43QYgJOQQRZuYI_PFWWGHN"/>
 <unit id="org.eclipse.equinox.sdk.feature.group" version="3.5.1.r351_v20090901-7G7MAA7lQiEeE7LKsaYgOK58fdAa"/>
 <unit id="org.eclipse.rap.sdk.feature.group" version="1.2.1.20090813-1453"/>
 <repository location="http://download.eclipse.org/releases/galileo"/>
 </location>
 <location path="${workspace_loc}/Toast/target" type="Directory"/>
 </locations>
-<environment>
-<ws>carbon</ws>
-</environment>
 <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 </target>
