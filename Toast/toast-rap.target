@@ -12,6 +12,7 @@
 <repository location="http://download.eclipse.org/releases/galileo"/>
 </location>
 <location path="${workspace_loc}/Toast/target" type="Directory"/>
+<location path="${workspace_loc}/Toast/delta.pack/eclipse" type="Directory"/>
 <location includeAllPlatforms="false" includeMode="slicer" type="InstallableUnit">
 <unit id="org.eclipse.rap.runtime.sdk.feature.group" version="1.3.0.20090929-1121"/>
 <repository location="http://download.eclipse.org/releases/helios"/>
