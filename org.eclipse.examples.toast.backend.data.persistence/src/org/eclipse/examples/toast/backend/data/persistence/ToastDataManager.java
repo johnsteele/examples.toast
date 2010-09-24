@@ -37,11 +37,32 @@ public class ToastDataManager implements IData {
 		if (emf == null) {
 			ClassLoader classLoader = this.getClass().getClassLoader();
 			properties.put(PersistenceUnitProperties.CLASSLOADER, classLoader);
+			//			properties.put(PersistenceUnitProperties.NON_JTA_DATASOURCE, createDataSource());
 			addPersistenceUnitProperties(properties);
+			//			Properties props = new Properties();
+			//			props.put("user", "app");
+			//			props.put("password", "app");
+			//			try {
+			//				Connection connection = new ClientDriver().connect("jdbc:derby://localhost/toast;create=true", props);
+			//				System.out.println(connection);
+			//			} catch (SQLException e) {
+			//				// TODO Auto-generated catch block
+			//				e.printStackTrace();
+			//			}
 			emf = new PersistenceProvider().createEntityManagerFactory(getPersistenceUnitName(), properties);
 		}
 		return emf;
 	}
+
+	//	private DataSource createDataSource() {
+	//		ClientDataSource dataSource = new ClientDataSource();
+	//		dataSource.setServerName("localhost");
+	//		dataSource.setPortNumber(1527);
+	//		dataSource.setDatabaseName("toast");
+	//		dataSource.setUser("app");
+	//		dataSource.setPassword("app");
+	//		return dataSource;
+	//	}
 
 	protected void addPersistenceUnitProperties(Map<String, Object> properties) {
 	}

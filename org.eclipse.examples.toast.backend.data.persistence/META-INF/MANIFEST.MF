@@ -12,5 +12,11 @@ Require-Bundle: org.eclipse.emf.teneo.eclipselink;bundle-version="1.0.0",
 Export-Package: org.eclipse.examples.toast.backend.data.persistence
 Import-Package: javax.persistence;version="1.99.0",
  org.apache.derby.jdbc,
+ org.eclipse.persistence;version="2.1.0.v20100517-r7246",
+ org.eclipse.persistence.config;version="2.1.0.v20100517-r7246",
+ org.eclipse.persistence.jpa.osgi;version="2.1.0.v20100517-r7246",
+ org.eclipse.persistence.mappings;version="2.1.0.v20100517-r7246",
+ org.eclipse.persistence.mappings.converters;version="2.1.0.v20100517-r7246",
+ org.eclipse.persistence.sessions;version="2.1.0.v20100517-r7246",
  org.osgi.framework;version="1.5.0"
 Service-Component: OSGI-INF/component.xml
