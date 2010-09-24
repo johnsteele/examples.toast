@@ -4,7 +4,10 @@ Bundle-Name: RAP Gmaps Plug-in
 Bundle-SymbolicName: org.eclipse.examples.toast.rap.widgets.gmaps;singleton:=true
 Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.rap.rwt
+Require-Bundle: org.eclipse.rap.rwt,
+ org.eclipse.rap.ui;bundle-version="1.3.0",
+ org.eclipse.examples.toast.backend.controlcenter,
+ org.eclipse.examples.toast.backend.data
 Import-Package: javax.servlet;version="2.4.0",
  javax.servlet.http;version="2.4.0"
 Export-Package: org.eclipse.examples.toast.rap.gmaps,
