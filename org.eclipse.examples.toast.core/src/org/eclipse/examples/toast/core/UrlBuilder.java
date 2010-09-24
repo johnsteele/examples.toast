@@ -11,8 +11,10 @@
  *******************************************************************************/
 package org.eclipse.examples.toast.core;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,8 +30,17 @@ public class UrlBuilder {
 				throw new IllegalArgumentException("name must not be null");
 			if (value == null)
 				throw new IllegalArgumentException("value must not be null");
-			this.name = name;
-			this.value = value;
+			this.name = encode(name);
+			this.value = encode(value);
+		}
+
+		private String encode(String value) {
+			try {
+				return URLEncoder.encode(value, "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// do nothing.  UTF-8 is always supported.
+				return value;
+			}
 		}
 
 		void printOn(StringBuffer buffer) {
@@ -109,9 +120,7 @@ public class UrlBuilder {
 	}
 
 	public URL toUrl() throws MalformedURLException {
-		String value = toString();
-		URL url = new URL(value);
-		return url;
+		return new URL(toString());
 	}
 
 	public void appendPath(String path) {
