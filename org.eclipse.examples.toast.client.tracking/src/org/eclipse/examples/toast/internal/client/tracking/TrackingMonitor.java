@@ -22,8 +22,9 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.examples.toast.core.ICoreConstants;
 import org.eclipse.examples.toast.core.LogUtility;
 import org.eclipse.examples.toast.core.PropertyManager;
-import org.eclipse.examples.toast.core.channel.sender.ChannelMessage;
-import org.eclipse.examples.toast.core.channel.sender.IChannel;
+import org.eclipse.examples.toast.core.channel.ChannelMessage;
+import org.eclipse.examples.toast.core.channel.IChannel;
+import org.eclipse.examples.toast.core.channel.UrlChannel;
 import org.eclipse.examples.toast.core.tracking.ITrackingConstants;
 import org.eclipse.examples.toast.dev.gps.IGps;
 
@@ -42,11 +43,8 @@ public class TrackingMonitor {
 		gps = value;
 	}
 
-	public void setChannel(IChannel value) {
-		channel = value;
-	}
-
 	public void startup() {
+		channel = new UrlChannel(PropertyManager.getProperty(ICoreConstants.BACK_END_URL_PROPERTY, ICoreConstants.BACK_END_URL_DEFAULT));
 		id = PropertyManager.getProperty(ICoreConstants.ID_PROPERTY);
 		if (id == null)
 			id = ICoreConstants.ID_DEFAULT;
