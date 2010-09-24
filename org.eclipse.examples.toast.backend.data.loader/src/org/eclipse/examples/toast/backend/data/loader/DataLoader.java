@@ -153,7 +153,8 @@ public class DataLoader {
 		TrackedLocation emergencyLocation = createTrackedLocation(null);
 
 		Vehicle vehicle = (Vehicle) factory.createVehicle();
-		vehicle.setName(driverAddress.getArea() + "-" + driverAddress.getCity() + "-" + n);
+		//		vehicle.setName(driverAddress.getArea() + "-" + driverAddress.getCity() + "-" + n);
+		vehicle.setName(driverAddress.getArea() + "-" + n);
 		vehicle.setDriver(driver);
 		vehicle.setCurrentLocation(currentLocation);
 		vehicle.setEmergencyLocation(emergencyLocation);
