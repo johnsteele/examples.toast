@@ -15,8 +15,9 @@ import java.io.IOException;
 import org.eclipse.examples.toast.core.ICoreConstants;
 import org.eclipse.examples.toast.core.LogUtility;
 import org.eclipse.examples.toast.core.PropertyManager;
-import org.eclipse.examples.toast.core.channel.sender.ChannelMessage;
-import org.eclipse.examples.toast.core.channel.sender.IChannel;
+import org.eclipse.examples.toast.core.channel.ChannelMessage;
+import org.eclipse.examples.toast.core.channel.IChannel;
+import org.eclipse.examples.toast.core.channel.UrlChannel;
 import org.eclipse.examples.toast.core.discovery.IDiscoveryConstants;
 import org.eclipse.examples.toast.core.tickle.ITickleReceiver;
 
@@ -25,19 +26,12 @@ public class HttpDiscoveryPublisher {
 	private ITickleReceiver tickleReceiver;
 	private String id;
 
-	public void setChannel(IChannel value) {
-		channel = value;
-	}
-
 	public void setTickleReceiver(ITickleReceiver value) {
 		tickleReceiver = value;
 	}
 
-	public void clearTickleReceiver(ITickleReceiver value) {
-		tickleReceiver = null;
-	}
-
 	public void startup() {
+		channel = new UrlChannel(PropertyManager.getProperty(ICoreConstants.BACK_END_URL_PROPERTY, ICoreConstants.BACK_END_URL_DEFAULT));
 		id = PropertyManager.getProperty(ICoreConstants.ID_PROPERTY, ICoreConstants.ID_DEFAULT);
 		String location = tickleReceiver.getTalkbackDescriptor().toString();
 		ChannelMessage message = new ChannelMessage(IDiscoveryConstants.DISCOVERY_ACTION);
@@ -60,11 +54,5 @@ public class HttpDiscoveryPublisher {
 		} catch (IOException e) {
 			LogUtility.logInfo("Unable to unregister with SMS central");
 		}
-		channel = null;
-		tickleReceiver = null;
-	}
-
-	public void clearChannel(IChannel value) {
-		channel = null;
 	}
 }
