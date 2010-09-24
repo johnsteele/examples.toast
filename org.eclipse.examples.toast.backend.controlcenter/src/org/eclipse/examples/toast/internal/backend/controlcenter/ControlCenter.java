@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.examples.toast.internal.backend.controlcenter;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -80,7 +81,7 @@ public class ControlCenter implements IControlCenter, IDiscoveryListener {
 	}
 
 	public Collection getVehicles() {
-		return data.getVehicles();
+		return new ArrayList(data.getVehicles());
 	}
 
 	public IVehicle getVehicle(String name) {
