@@ -36,7 +36,7 @@ public class FeatureSync {
 		configurator = value;
 	}
 
-	public void setTicklee(ITickleReceiver value) {
+	public void setReceiver(ITickleReceiver value) {
 		receiver = value;
 	}
 
@@ -53,21 +53,13 @@ public class FeatureSync {
 		};
 	}
 
-	public void clearConfigurator(Configurator value) {
-		configurator = null;
-	}
-
-	public void clearTicklee(ITickleReceiver value) {
-		receiver = null;
-	}
-
 	public void shutdown() {
 		receiver.removeListener(tickleListener);
 	}
 
 	public boolean sync() {
 		synchronized (this) {
-			if (job != null)
+			if (job == null)
 				return false;
 			job.schedule();
 			return true;
