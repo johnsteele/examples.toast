@@ -73,6 +73,7 @@
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.emergency,org.eclipse.examples.toast.swt.emergency"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.nav.guidance.google,org.eclipse.examples.toast.swt.nav.guidance.google"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eclipse.examples.toast.swt.nav.mapping.google,org.eclipse.examples.toast.swt.nav.mapping.google"/>
+<project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/org.eeclipse.examples.toast.client.tracking.feature,org.eeclipse.examples.toast.client.tracking.feature"/>
 <project reference="1.0,:extssh:dev.eclipse.org:/cvsroot/technology,org.eclipse.examples/toast/Toast,Toast"/>
 </provider>
 <workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1256151686164_8" label="Back End" name="Back End">
