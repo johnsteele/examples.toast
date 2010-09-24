@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Toast Client" uid="org.eclipse.examples.toast.client" id="org.eclipse.examples.toast.crust.display.ToastProduct" application="org.eclipse.examples.toast.crust.display.CrustApplication" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-consolelog -console</programArgs>
+      <vmArgs>-Dtoast.core.util.logLevel=DEBUG
+-Dorg.osgi.service.http.port=8081
+-Dequinox.ds.print=true</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+-d32</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="client">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5</macos>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.examples.toast.client.provisioning.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.examples.toast.client.shell.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.examples.toast.client.tickle.simple.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.examples.toast.client.discovery.simple.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.equinox.server.simple"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.examples.toast.core.autostart" autoStart="true" startLevel="2" />
+   </configurations>
+
+</product>
