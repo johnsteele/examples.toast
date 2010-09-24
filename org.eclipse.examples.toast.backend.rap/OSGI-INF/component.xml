@@ -3,4 +3,5 @@
   <implementation class="org.eclipse.examples.toast.internal.backend.rap.bundle.Component"/>
   <reference bind="setControlCenter" cardinality="0..1" interface="org.eclipse.examples.toast.backend.controlcenter.IControlCenter" name="controlCenter" policy="dynamic" unbind="unbind"/>
   <reference bind="setProvisioner" cardinality="1..1" interface="org.eclipse.examples.toast.backend.provisioning.IProvisioner" name="provisioner" policy="static"/>
+  <reference bind="setTickler" cardinality="1..1" interface="org.eclipse.examples.toast.core.tickle.ITickleSender" name="tickler" policy="static"/>
 </scr:component>

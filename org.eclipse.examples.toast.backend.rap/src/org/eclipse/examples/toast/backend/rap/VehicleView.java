@@ -176,21 +176,30 @@ public class VehicleView extends ViewPart {
 	private void setVehicle(final IVehicle value) {
 		vehicle = value;
 		IDriver driver = vehicle.getDriver();
-		Image image = getDriverImage(driver.getImage());
-		if (image != null)
-			photoLabel.setImage(image);
-		else
+		if (driver != null) {
+			Image image = getDriverImage(driver.getImage());
+			photoLabel.setImage(image == null ? DEFAULT_IMAGE : image);
+			nameLabel.setText(driver == null ? "" : driver.getFirstName() + " " + driver.getLastName());
+			IAddress address = driver.getAddress();
+			addressLabel.setText(address.getCity());
+		} else {
 			photoLabel.setImage(DEFAULT_IMAGE);
-		nameLabel.setText(driver.getFirstName() + " " + driver.getLastName());
-		IAddress address = driver.getAddress();
-		addressLabel.setText(address.getCity());
-		vidLabel.setText(vehicle.getName());
+			nameLabel.setText("");
+			addressLabel.setText("");
+		}
+
+		vidLabel.setText(vehicle.getName() + (vehicle.isOnline() ? "   ONLINE" : ""));
 		packagesLabel.setText(String.valueOf(vehicle.getPackages().size()));
 		ITrackedLocation location = vehicle.getCurrentLocation();
-		String lonStr = String.valueOf(location.getLongitude() / 100000.0);
-		String latStr = String.valueOf(location.getLatitude() / 100000.0);
-		locationLabel.setText(latStr + ", " + lonStr); //$NON-NLS-1$
-		headingLabel.setText(getDirection(location.getHeading()) + " at " + location.getSpeed() + " mph");
+		if (location != null) {
+			String lonStr = String.valueOf(location.getLongitude() / 100000.0);
+			String latStr = String.valueOf(location.getLatitude() / 100000.0);
+			locationLabel.setText(latStr + ", " + lonStr); //$NON-NLS-1$
+			headingLabel.setText(getDirection(location.getHeading()) + " at " + location.getSpeed() + " mph");
+		} else {
+			locationLabel.setText("");
+			headingLabel.setText("");
+		}
 		editProfileButton.setEnabled(vehicle != null);
 		photoLabel.getParent().layout();
 		parent.layout();

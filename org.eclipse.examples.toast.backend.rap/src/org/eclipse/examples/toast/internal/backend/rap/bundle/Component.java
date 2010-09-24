@@ -14,11 +14,13 @@ package org.eclipse.examples.toast.internal.backend.rap.bundle;
 import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
 import org.eclipse.examples.toast.backend.provisioning.IProvisioner;
 import org.eclipse.examples.toast.backend.rap.SearchView;
+import org.eclipse.examples.toast.core.tickle.ITickleSender;
 
 public class Component {
 
 	private static IProvisioner provisioner;
 	private static IControlCenter controlCenter;
+	private static ITickleSender tickler;
 
 	public static IControlCenter getControlCenter() {
 		return controlCenter;
@@ -35,6 +37,14 @@ public class Component {
 
 	public void setProvisioner(IProvisioner value) {
 		provisioner = value;
+	}
+
+	public static ITickleSender getTickler() {
+		return tickler;
+	}
+
+	public void setTickler(ITickleSender value) {
+		tickler = value;
 	}
 
 }

@@ -15,6 +15,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import org.eclipse.examples.toast.backend.controlcenter.IControlCenter;
+import org.eclipse.examples.toast.backend.data.IDriver;
+import org.eclipse.examples.toast.backend.data.ITrackedLocation;
 import org.eclipse.examples.toast.backend.data.IVehicle;
 import org.eclipse.jface.action.IStatusLineManager;
 import org.eclipse.jface.layout.TableColumnLayout;
@@ -71,11 +73,16 @@ public class SearchView extends ViewPart {
 			switch (columnIndex) {
 				case COL_VEHICLE_ID :
 					cell.setText(vehicle.getName());
-					Image image = vehicle.getCurrentLocation().getSpeed() < 80 ? CAR_IMAGE : CAR_PROBLEM_IMAGE;
-					cell.setImage(image);
+					ITrackedLocation location = vehicle.getCurrentLocation();
+					if (location != null) {
+						Image image = location.getSpeed() < 80 ? CAR_IMAGE : CAR_PROBLEM_IMAGE;
+						cell.setImage(image);
+					}
 					break;
 				case COL_DRIVER_NAME :
-					cell.setText(vehicle.getDriver().getLastName() + ", " + vehicle.getDriver().getFirstName());
+					IDriver driver = vehicle.getDriver();
+					if (driver != null)
+						cell.setText(driver.getFirstName() + " " + vehicle.getDriver().getLastName());
 					break;
 			}
 		}
@@ -162,8 +169,8 @@ public class SearchView extends ViewPart {
 		viewer.addFilter(viewerFilter);
 		Table table = viewer.getTable();
 		TableColumnLayout tableLayout = new TableColumnLayout();
-		tableLayout.setColumnData(table.getColumn(COL_VEHICLE_ID), new ColumnWeightData(50));
-		tableLayout.setColumnData(table.getColumn(COL_DRIVER_NAME), new ColumnWeightData(50));
+		tableLayout.setColumnData(table.getColumn(COL_VEHICLE_ID), new ColumnWeightData(30));
+		tableLayout.setColumnData(table.getColumn(COL_DRIVER_NAME), new ColumnWeightData(70));
 		resizer.setLayout(tableLayout);
 		table.setHeaderVisible(true);
 		addTableContextMenu(table);
@@ -216,7 +223,7 @@ public class SearchView extends ViewPart {
 		result.setLabelProvider(labelProvider);
 		TableColumn column = result.getColumn();
 		column.setText("Vehicle Id");
-		column.setWidth(120);
+		column.setWidth(60);
 		column.setMoveable(true);
 		column.addSelectionListener(new SelectionAdapter() {
 
@@ -233,7 +240,7 @@ public class SearchView extends ViewPart {
 		result.setLabelProvider(labelProvider);
 		TableColumn column = result.getColumn();
 		column.setText("Driver Name");
-		column.setWidth(150);
+		column.setWidth(210);
 		column.setMoveable(true);
 		column.addSelectionListener(new SelectionAdapter() {
 

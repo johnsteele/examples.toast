@@ -14,7 +14,7 @@ package org.eclipse.examples.toast.backend.rap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import org.eclipse.equinox.internal.provisional.p2.metadata.IInstallableUnit;
+import org.eclipse.equinox.p2.metadata.IInstallableUnit;
 import org.eclipse.examples.toast.backend.data.IVehicle;
 import org.eclipse.examples.toast.backend.provisioning.IProvisioner;
 import org.eclipse.examples.toast.internal.backend.rap.bundle.Component;
@@ -69,10 +69,11 @@ public class SoftwareView extends ViewPart {
 				dialog.setInput(new ArrayList(ius));
 				dialog.open();
 				List selectedPackages = dialog.getSelectedPackages();
-				if (selectedPackages != null) {
+				if (selectedPackages != null && !selectedPackages.isEmpty()) {
 					IProvisioner provisioner = Component.getProvisioner();
 					IInstallableUnit iu = (IInstallableUnit) selectedPackages.get(0);
 					provisioner.install(vehicle.getName(), iu.getId(), null);
+					Component.getTickler().tickle(vehicle.getName());
 				}
 				viewer.setInput(getInstalledPackages(vehicle));
 			}
@@ -81,12 +82,12 @@ public class SoftwareView extends ViewPart {
 		Button removeButton = new Button(comp, SWT.PUSH);
 		removeButton.setText("Remove");
 		removeButton.addSelectionListener(new SelectionAdapter() {
-
 			public void widgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
 				IProvisioner provisioner = Component.getProvisioner();
 				IInstallableUnit iu = (IInstallableUnit) selection.getFirstElement();
 				provisioner.uninstall(vehicle.getName(), iu.getId(), null);
+				Component.getTickler().tickle(vehicle.getName());
 				viewer.setInput(getInstalledPackages(vehicle));
 			}
 		});
@@ -103,7 +104,7 @@ public class SoftwareView extends ViewPart {
 		IProvisioner provisioner = Component.getProvisioner();
 		if (provisioner == null)
 			return new ArrayList();
-		return provisioner.getAvailableFeatures();
+		return provisioner.getAvailableFeatures(vehicle.getName());
 	}
 
 	private Collection getInstalledPackages(IVehicle vehicle) {
