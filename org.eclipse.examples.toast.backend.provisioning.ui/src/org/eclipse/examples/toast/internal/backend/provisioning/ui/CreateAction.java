@@ -47,7 +47,7 @@ public class CreateAction implements IPortalAction {
 		buffer.append("Create New Vehicle: <input type=text name=id>\n");
 		buffer.append("<select name = \"config\">\n");
 		buffer.append("<option value=\"win32,win32,x86\">Windows\n");
-		buffer.append("<option value=\"macos,carbon,x86\">Mac\n");
+		buffer.append("<option value=\"macosx,carbon,x86\">Mac\n");
 		buffer.append("</select>\n");
 		buffer.append("<input type=submit value=\"Create\">\n");
 		buffer.append("<input type=hidden name=action value=create>\n");

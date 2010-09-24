@@ -19,7 +19,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.eclipse.equinox.internal.provisional.p2.metadata.IInstallableUnit;
+import org.eclipse.equinox.p2.metadata.IInstallableUnit;
 import org.eclipse.examples.toast.backend.portal.spi.IPortalAction;
 import org.eclipse.examples.toast.backend.provisioning.IProvisioner;
 import org.eclipse.examples.toast.core.ICoreConstants;
