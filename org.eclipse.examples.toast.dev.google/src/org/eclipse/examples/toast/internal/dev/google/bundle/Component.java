@@ -24,6 +24,7 @@ import org.eclipse.swt.browser.LocationEvent;
 import org.eclipse.swt.browser.ProgressAdapter;
 import org.eclipse.swt.browser.ProgressEvent;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.widgets.Display;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
@@ -43,39 +44,46 @@ public class Component {
 	}
 
 	public void startup(final BundleContext context) {
-		browser = new Browser(((CrustShell) shell).getShell(), SWT.NONE);
-		browser.setBounds(new Rectangle(115, 22, 510, 318));
-		browser.setVisible(false);
-		URL url = this.getClass().getResource("index.html");
-		try {
-			url = converter.toFileURL(url);
-		} catch (IOException e) {
-			LogUtility.logDebug("Unable to find home page: " + url);
-			return;
-		}
-		// work around a quirk in the browser support.  Currently it is unclear which 
-		// platform is wrong.  Suspect that the Mac is right here but who knows.
-		if (System.getProperty("osgi.os").equals("macosx")) {
-			browser.addProgressListener(new ProgressAdapter() {
-				public void completed(ProgressEvent event) {
-					browser.removeProgressListener(this);
-					browserRegistration = context.registerService(Browser.class.getName(), browser, null);
+		Display.getDefault().syncExec(new Runnable() {
+			public void run() {
+				browser = new Browser(((CrustShell) shell).getShell(), SWT.NONE);
+				browser.setBounds(new Rectangle(115, 22, 510, 318));
+				browser.setVisible(false);
+				URL jsURL = this.getClass().getResource("index.js");
+				URL htmlURL = this.getClass().getResource("index.html");
+				try {
+					// make sure we extract the files so the browser can see them
+					converter.toFileURL(jsURL);
+					htmlURL = converter.toFileURL(htmlURL);
+				} catch (IOException e) {
+					LogUtility.logDebug("Unable to find home page: " + htmlURL);
+					return;
 				}
-			});
-		} else {
-			browser.addProgressListener(new ProgressAdapter() {
-				public void completed(ProgressEvent event) {
-					browser.removeProgressListener(this);
-					browser.addLocationListener(new LocationAdapter() {
-						public void changed(LocationEvent event) {
-							browser.removeLocationListener(this);
+				// work around a quirk in the browser support.  Currently it is unclear which 
+				// platform is wrong.  Suspect that the Mac is right here but who knows.
+				if (System.getProperty("osgi.os").equals("macosx")) {
+					browser.addProgressListener(new ProgressAdapter() {
+						public void completed(ProgressEvent event) {
+							browser.removeProgressListener(this);
 							browserRegistration = context.registerService(Browser.class.getName(), browser, null);
 						}
 					});
+				} else {
+					browser.addProgressListener(new ProgressAdapter() {
+						public void completed(ProgressEvent event) {
+							browser.removeProgressListener(this);
+							browser.addLocationListener(new LocationAdapter() {
+								public void changed(LocationEvent event) {
+									browser.removeLocationListener(this);
+									browserRegistration = context.registerService(Browser.class.getName(), browser, null);
+								}
+							});
+						}
+					});
 				}
-			});
-		}
-		browser.setUrl(url.toExternalForm());
+				browser.setUrl(htmlURL.toExternalForm());
+			}
+		});
 	}
 
 	public void shutdown() {
