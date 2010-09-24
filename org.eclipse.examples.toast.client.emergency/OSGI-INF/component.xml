@@ -6,5 +6,4 @@
   </service>
   <reference bind="setGps" interface="org.eclipse.examples.toast.dev.gps.IGps" name="gps"/>
   <reference bind="setAirbag" interface="org.eclipse.examples.toast.dev.airbag.IAirbag" name="airbag"/>
-  <reference bind="setChannel" interface="org.eclipse.examples.toast.core.channel.sender.IChannel" name="channel"/>
 </scr:component>

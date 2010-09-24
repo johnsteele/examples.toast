@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: J2SE-1.4
 Import-Package: org.eclipse.core.runtime.jobs,
  org.eclipse.examples.toast.core;version="[1.0.0,2.0.0)",
- org.eclipse.examples.toast.core.channel.sender;version="[1.0.0,2.0.0)",
+ org.eclipse.examples.toast.core.channel;version="[1.0.0,2.0.0)",
  org.eclipse.examples.toast.core.emergency;version="[1.0.0,2.0.0)",
  org.eclipse.examples.toast.dev.airbag;version="[1.0.0,2.0.0)",
  org.eclipse.examples.toast.dev.gps;version="[1.0.0,2.0.0)"

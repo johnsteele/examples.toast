@@ -27,8 +27,9 @@ import org.eclipse.examples.toast.client.emergency.IEmergencyMonitorListener;
 import org.eclipse.examples.toast.core.ICoreConstants;
 import org.eclipse.examples.toast.core.LogUtility;
 import org.eclipse.examples.toast.core.PropertyManager;
-import org.eclipse.examples.toast.core.channel.sender.ChannelMessage;
-import org.eclipse.examples.toast.core.channel.sender.IChannel;
+import org.eclipse.examples.toast.core.channel.ChannelMessage;
+import org.eclipse.examples.toast.core.channel.IChannel;
+import org.eclipse.examples.toast.core.channel.UrlChannel;
 import org.eclipse.examples.toast.core.emergency.IEmergencyConstants;
 import org.eclipse.examples.toast.dev.airbag.IAirbag;
 import org.eclipse.examples.toast.dev.airbag.IAirbagListener;
@@ -131,10 +132,6 @@ public class EmergencyMonitor implements IAirbagListener, IEmergencyMonitor {
 		airbag = value;
 	}
 
-	public void setChannel(IChannel value) {
-		channel = value;
-	}
-
 	public void setGps(IGps value) {
 		gps = value;
 	}
@@ -158,6 +155,7 @@ public class EmergencyMonitor implements IAirbagListener, IEmergencyMonitor {
 	}
 
 	public void startup() {
+		channel = new UrlChannel(PropertyManager.getProperty(ICoreConstants.BACK_END_URL_PROPERTY, ICoreConstants.BACK_END_URL_DEFAULT));
 		airbag.addListener(this);
 	}
 
