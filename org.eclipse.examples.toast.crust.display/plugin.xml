@@ -19,10 +19,10 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.examples.toast.crust.display.CrustApplication"
-            name="Toast Client">
+            name="Toast Client (Full)">
          <property
                name="appName"
-               value="Toast Client">
+               value="Toast Client (Full)">
          </property>
       </product>
    </extension>
